@@ -70,35 +70,35 @@
 
 | REQ-ID | Phase | Status |
 |--------|-------|--------|
-| PORT-01 | — | Pending |
-| PORT-02 | — | Pending |
-| PORT-03 | — | Pending |
-| PORT-04 | — | Pending |
-| PORT-05 | — | Pending |
-| WALK-01 | — | Pending |
-| WALK-02 | — | Pending |
-| WALK-03 | — | Pending |
-| BOOK-01 | — | Pending |
-| BOOK-02 | — | Pending |
-| BOOK-03 | — | Pending |
-| INFO-01 | — | Pending |
-| INFO-02 | — | Pending |
-| INFO-03 | — | Pending |
-| INFO-04 | — | Pending |
-| SOCIAL-01 | — | Pending |
-| SOCIAL-02 | — | Pending |
-| SOCIAL-03 | — | Pending |
-| UX-01 | — | Pending |
-| UX-02 | — | Pending |
-| UX-03 | — | Pending |
-| UX-04 | — | Pending |
-| UX-05 | — | Pending |
-| PERF-01 | — | Pending |
-| PERF-02 | — | Pending |
-| PERF-03 | — | Pending |
-| SEO-01 | — | Pending |
-| SEO-02 | — | Pending |
-| SEO-03 | — | Pending |
+| UX-01 | Phase 1 | Pending |
+| UX-02 | Phase 1 | Pending |
+| UX-04 | Phase 2 | Pending |
+| BOOK-01 | Phase 2 | Pending |
+| BOOK-02 | Phase 2 | Pending |
+| UX-05 | Phase 3 | Pending |
+| UX-03 | Phase 3 | Pending |
+| PORT-01 | Phase 4 | Pending |
+| PORT-02 | Phase 4 | Pending |
+| PORT-03 | Phase 4 | Pending |
+| PORT-04 | Phase 4 | Pending |
+| PORT-05 | Phase 4 | Pending |
+| WALK-01 | Phase 5 | Pending |
+| WALK-02 | Phase 5 | Pending |
+| WALK-03 | Phase 5 | Pending |
+| INFO-01 | Phase 5 | Pending |
+| INFO-02 | Phase 5 | Pending |
+| INFO-03 | Phase 5 | Pending |
+| INFO-04 | Phase 5 | Pending |
+| BOOK-03 | Phase 5 | Pending |
+| SOCIAL-01 | Phase 5 | Pending |
+| SOCIAL-02 | Phase 5 | Pending |
+| SOCIAL-03 | Phase 5 | Pending |
+| PERF-01 | Phase 6 | Pending |
+| PERF-02 | Phase 6 | Pending |
+| PERF-03 | Phase 6 | Pending |
+| SEO-01 | Phase 6 | Pending |
+| SEO-02 | Phase 6 | Pending |
+| SEO-03 | Phase 6 | Pending |
 
 ---
 *29 v1 requirements across 7 categories. 5 deferred to v2.*
