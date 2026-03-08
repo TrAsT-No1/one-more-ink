@@ -1,209 +1,287 @@
-import { STUDIO_INFO, SOCIAL_LINKS, BUSINESS_HOURS } from "@/lib/constants"
-import { artists, services } from "@/lib/data"
+"use client"
 
-export default function DesignSystemTest() {
+import { m } from "motion/react"
+import { FadeIn } from "@/components/animations/fade-in"
+import { SlideUp } from "@/components/animations/slide-up"
+import { StaggerContainer } from "@/components/animations/stagger-container"
+import { fadeInUp } from "@/lib/animations"
+import { STUDIO_INFO } from "@/lib/constants"
+
+const COLORS = [
+  { name: "ink", className: "bg-ink border border-bone/10" },
+  { name: "ink-deep", className: "bg-ink-deep border border-bone/10" },
+  { name: "ink-surface", className: "bg-ink-surface border border-bone/10" },
+  { name: "gold", className: "bg-gold text-ink" },
+  { name: "gold-muted", className: "bg-gold-muted text-ink" },
+  { name: "gold-light", className: "bg-gold-light text-ink" },
+  { name: "bone", className: "bg-bone text-ink" },
+  { name: "bone-muted", className: "bg-bone-muted text-ink" },
+]
+
+const DIRECTIONS = ["up", "down", "left", "right", "none"] as const
+
+export default function AnimationDemo() {
   return (
-    <main className="min-h-screen px-6 py-section-mobile md:py-section">
-      <div className="mx-auto max-w-4xl space-y-16">
-        {/* Header */}
-        <header className="space-y-4">
-          <h1 className="font-display text-5xl font-light tracking-tight text-bone md:text-7xl">
+    <main>
+      {/* Navigation anchors */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-ink-deep/80 backdrop-blur-sm border-b border-bone/5">
+        <div className="mx-auto max-w-6xl px-6 py-3 flex gap-6 overflow-x-auto text-sm">
+          {["hero", "colors", "typography", "animations", "anchors"].map(
+            (id) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                className="text-bone-muted hover:text-gold transition-colors whitespace-nowrap capitalize"
+              >
+                {id}
+              </a>
+            )
+          )}
+        </div>
+      </nav>
+
+      {/* Section 1: Hero sim */}
+      <section
+        id="hero"
+        className="relative flex min-h-screen flex-col items-center justify-center px-6"
+      >
+        <SlideUp>
+          <h1 className="font-display text-6xl font-light tracking-tight text-center md:text-8xl lg:text-9xl">
             {STUDIO_INFO.name}
           </h1>
-          <p className="font-body text-lg text-bone-muted">
-            Design System Test Page — All tokens verified below
+        </SlideUp>
+        <FadeIn delay={0.4} direction="up" distance={20}>
+          <p className="mt-6 max-w-lg text-center text-lg text-bone-muted font-body">
+            Animation primitives demo — scroll down to see FadeIn, SlideUp, and
+            StaggerContainer in action
           </p>
-        </header>
-
-        {/* Color Palette */}
-        <section className="space-y-6">
-          <h2 className="font-display text-3xl text-gold">Color Palette</h2>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-            <ColorSwatch name="ink" className="bg-ink border border-bone/10" />
-            <ColorSwatch name="ink-deep" className="bg-ink-deep border border-bone/10" />
-            <ColorSwatch name="ink-surface" className="bg-ink-surface border border-bone/10" />
-            <ColorSwatch name="gold" className="bg-gold text-ink" />
-            <ColorSwatch name="gold-muted" className="bg-gold-muted text-ink" />
-            <ColorSwatch name="gold-light" className="bg-gold-light text-ink" />
-            <ColorSwatch name="bone" className="bg-bone text-ink" />
-            <ColorSwatch name="bone-muted" className="bg-bone-muted text-ink" />
-          </div>
-        </section>
-
-        {/* Typography */}
-        <section className="space-y-6">
-          <h2 className="font-display text-3xl text-gold">Typography</h2>
-          <div className="space-y-4">
-            <div>
-              <p className="text-sm text-bone-muted uppercase tracking-widest mb-2">
-                Display (Cormorant Garamond)
-              </p>
-              <p className="font-display text-4xl font-light">
-                The art lives beneath the skin
-              </p>
-              <p className="font-display text-2xl font-semibold mt-2">
-                Bold display variant
-              </p>
-            </div>
-            <div>
-              <p className="text-sm text-bone-muted uppercase tracking-widest mb-2">
-                Body (Inter)
-              </p>
-              <p className="font-body text-base">
-                Every tattoo tells a story. Our artists bring your vision to
-                life with precision, creativity, and years of experience.
-              </p>
-              <p className="font-body text-sm text-bone-muted mt-2">
-                Muted body text for secondary information and captions.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Spacing */}
-        <section className="space-y-6">
-          <h2 className="font-display text-3xl text-gold">Spacing</h2>
-          <div className="space-y-4">
-            <div className="bg-ink-surface p-6 rounded">
-              <p className="text-sm text-bone-muted mb-2">
-                Section padding (desktop: 6rem / mobile: 4rem)
-              </p>
-              <div className="h-4 bg-gold/20 rounded" />
-            </div>
-          </div>
-        </section>
-
-        {/* Focus State */}
-        <section className="space-y-6">
-          <h2 className="font-display text-3xl text-gold">Interactive States</h2>
-          <div className="flex flex-wrap gap-4">
-            <button className="bg-gold text-ink px-6 py-3 font-body text-sm uppercase tracking-widest transition-colors hover:bg-gold-light">
-              Primary Action
-            </button>
-            <button className="border border-gold text-gold px-6 py-3 font-body text-sm uppercase tracking-widest transition-colors hover:bg-gold hover:text-ink">
-              Secondary Action
-            </button>
+        </FadeIn>
+        <FadeIn delay={0.8} direction="none">
+          <div className="mt-12 flex gap-4">
             <a
-              href="#"
-              className="text-gold-muted underline underline-offset-4 transition-colors hover:text-gold"
+              href="#colors"
+              className="bg-gold text-ink px-6 py-3 text-sm font-body uppercase tracking-widest transition-colors hover:bg-gold-light"
             >
-              Text link
+              Explore
+            </a>
+            <a
+              href="#animations"
+              className="border border-gold text-gold px-6 py-3 text-sm font-body uppercase tracking-widest transition-colors hover:bg-gold hover:text-ink"
+            >
+              Animations
             </a>
           </div>
-        </section>
-
-        {/* Studio Info (from constants.ts) */}
-        <section className="space-y-6">
-          <h2 className="font-display text-3xl text-gold">Studio Info</h2>
-          <div className="bg-ink-surface p-6 rounded space-y-3">
-            <p>
-              <span className="text-bone-muted">Address:</span>{" "}
-              {STUDIO_INFO.address}
-            </p>
-            <p>
-              <span className="text-bone-muted">Phone:</span>{" "}
-              {STUDIO_INFO.phone}
-            </p>
-            <p>
-              <span className="text-bone-muted">Email:</span>{" "}
-              {STUDIO_INFO.email}
-            </p>
-            <div className="flex gap-4 pt-2">
-              {SOCIAL_LINKS.map((link) => (
-                <span key={link.platform} className="text-gold-muted">
-                  {link.platform}
-                </span>
-              ))}
-            </div>
-            <div className="pt-2 text-sm text-bone-muted">
-              {BUSINESS_HOURS.map((h) => (
-                <p key={h.day}>
-                  {h.day}: {h.hours}
-                </p>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Data (from data.ts) */}
-        <section className="space-y-6">
-          <h2 className="font-display text-3xl text-gold">Artists & Services</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="bg-ink-surface p-6 rounded">
-              <h3 className="font-display text-xl text-gold-light mb-4">
-                Artists ({artists.length})
-              </h3>
-              {artists.map((artist) => (
-                <div key={artist.slug} className="mb-3">
-                  <p className="font-display text-lg">{artist.name}</p>
-                  <p className="text-sm text-bone-muted">{artist.role}</p>
-                  <div className="flex gap-2 mt-1">
-                    {artist.styles.map((s) => (
-                      <span
-                        key={s}
-                        className="text-xs bg-ink px-2 py-0.5 rounded text-gold-muted"
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="bg-ink-surface p-6 rounded">
-              <h3 className="font-display text-xl text-gold-light mb-4">
-                Services ({services.length})
-              </h3>
-              {services.map((service) => (
-                <div key={service.slug} className="mb-3">
-                  <p className="font-display text-lg">{service.name}</p>
-                  <p className="text-sm text-bone-muted">
-                    {service.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Responsive Check */}
-        <section className="space-y-6">
-          <h2 className="font-display text-3xl text-gold">Responsive</h2>
-          <p className="text-bone-muted">
-            Resize the browser from 320px to 1440px+. No horizontal overflow
-            should occur.
+        </FadeIn>
+        {/* Scroll indicator */}
+        <FadeIn delay={1.2} direction="none" className="absolute bottom-8">
+          <p className="text-xs text-bone-muted uppercase tracking-[0.3em] animate-pulse">
+            Scroll
           </p>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="bg-ink-surface p-6 rounded">
-                <p className="font-display text-xl">Card {i}</p>
-                <p className="text-sm text-bone-muted mt-2">
-                  Responsive grid test
+        </FadeIn>
+      </section>
+
+      {/* Section 2: Color palette with StaggerContainer */}
+      <section
+        id="colors"
+        className="px-6 py-section-mobile md:py-section"
+      >
+        <div className="mx-auto max-w-6xl">
+          <SlideUp>
+            <h2 className="font-display text-4xl text-gold mb-12 md:text-5xl">
+              Color Palette
+            </h2>
+          </SlideUp>
+          <StaggerContainer className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
+            {COLORS.map((color) => (
+              <m.div
+                key={color.name}
+                variants={fadeInUp}
+                className={`rounded-lg p-6 ${color.className}`}
+              >
+                <p className="font-mono text-sm">{color.name}</p>
+                <p className="mt-1 text-xs opacity-70">OKLCH token</p>
+              </m.div>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
+      {/* Section 3: Typography showcase */}
+      <section
+        id="typography"
+        className="bg-ink-deep px-6 py-section-mobile md:py-section"
+      >
+        <div className="mx-auto max-w-6xl">
+          <SlideUp>
+            <h2 className="font-display text-4xl text-gold mb-12 md:text-5xl">
+              Typography
+            </h2>
+          </SlideUp>
+
+          <div className="space-y-12">
+            <FadeIn direction="left">
+              <div>
+                <p className="text-sm text-bone-muted uppercase tracking-widest mb-4">
+                  Display — Cormorant Garamond
+                </p>
+                <p className="font-display text-5xl font-light md:text-7xl">
+                  The art lives beneath the skin
                 </p>
               </div>
-            ))}
+            </FadeIn>
+
+            <FadeIn direction="right" delay={0.2}>
+              <div>
+                <p className="text-sm text-bone-muted uppercase tracking-widest mb-4">
+                  Display — Semibold
+                </p>
+                <p className="font-display text-3xl font-semibold md:text-5xl">
+                  Every mark tells a story
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn direction="up" delay={0.1}>
+              <div>
+                <p className="text-sm text-bone-muted uppercase tracking-widest mb-4">
+                  Body — Inter
+                </p>
+                <p className="font-body text-base max-w-2xl leading-relaxed">
+                  Every tattoo tells a story. Our artists bring your vision to
+                  life with precision, creativity, and years of experience.
+                  From delicate fine-line work to bold traditional pieces, we
+                  craft art that lasts a lifetime.
+                </p>
+                <p className="font-body text-sm text-bone-muted mt-4">
+                  Muted body text for secondary information and captions.
+                </p>
+              </div>
+            </FadeIn>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Footer */}
-        <footer className="border-t border-bone/10 pt-8 text-center text-sm text-bone-muted">
-          <p>Design System v1.0 — {STUDIO_INFO.name}</p>
-        </footer>
-      </div>
+      {/* Section 4: Animation demo - all directions + distances */}
+      <section
+        id="animations"
+        className="px-6 py-section-mobile md:py-section"
+      >
+        <div className="mx-auto max-w-6xl">
+          <SlideUp>
+            <h2 className="font-display text-4xl text-gold mb-4 md:text-5xl">
+              Animation Primitives
+            </h2>
+            <p className="text-bone-muted mb-12 max-w-2xl">
+              Each box demonstrates a different FadeIn direction. All use
+              whileInView with once:true — scroll past and they stay revealed.
+            </p>
+          </SlideUp>
+
+          {/* FadeIn directions */}
+          <div className="space-y-8 mb-16">
+            <h3 className="font-display text-2xl text-gold-muted">
+              FadeIn Directions
+            </h3>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {DIRECTIONS.map((dir, i) => (
+                <FadeIn key={dir} direction={dir} delay={i * 0.1}>
+                  <div className="bg-ink-surface rounded-lg p-6 border border-bone/5">
+                    <p className="font-display text-xl text-gold-light">
+                      {dir}
+                    </p>
+                    <p className="text-sm text-bone-muted mt-2">
+                      FadeIn direction=&quot;{dir}&quot;
+                    </p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+
+          {/* SlideUp with different distances */}
+          <div className="space-y-8 mb-16">
+            <h3 className="font-display text-2xl text-gold-muted">
+              SlideUp Distances
+            </h3>
+            <div className="grid gap-6 sm:grid-cols-3">
+              {[40, 80, 120].map((dist, i) => (
+                <SlideUp key={dist} distance={dist} delay={i * 0.15}>
+                  <div className="bg-ink-surface rounded-lg p-6 border border-bone/5">
+                    <p className="font-display text-xl text-gold-light">
+                      {dist}px
+                    </p>
+                    <p className="text-sm text-bone-muted mt-2">
+                      SlideUp distance={dist}
+                    </p>
+                  </div>
+                </SlideUp>
+              ))}
+            </div>
+          </div>
+
+          {/* StaggerContainer demo */}
+          <div className="space-y-8">
+            <h3 className="font-display text-2xl text-gold-muted">
+              StaggerContainer
+            </h3>
+            <p className="text-sm text-bone-muted">
+              Children animate sequentially with stagger delay
+            </p>
+            <StaggerContainer className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+              {Array.from({ length: 8 }, (_, i) => (
+                <m.div
+                  key={i}
+                  variants={fadeInUp}
+                  className="bg-ink-surface rounded-lg p-6 border border-bone/5 text-center"
+                >
+                  <p className="font-display text-3xl text-gold">{i + 1}</p>
+                  <p className="text-xs text-bone-muted mt-2">
+                    stagger child
+                  </p>
+                </m.div>
+              ))}
+            </StaggerContainer>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: Anchor test */}
+      <section
+        id="anchors"
+        className="bg-ink-deep px-6 py-section-mobile md:py-section"
+      >
+        <div className="mx-auto max-w-6xl">
+          <SlideUp>
+            <h2 className="font-display text-4xl text-gold mb-8 md:text-5xl">
+              Anchor Links
+            </h2>
+            <p className="text-bone-muted mb-8">
+              Click any link to test smooth scroll navigation. Back button
+              should work correctly.
+            </p>
+          </SlideUp>
+          <FadeIn>
+            <div className="flex flex-wrap gap-4">
+              {["hero", "colors", "typography", "animations"].map((id) => (
+                <a
+                  key={id}
+                  href={`#${id}`}
+                  className="border border-gold text-gold px-6 py-3 text-sm font-body uppercase tracking-widest transition-colors hover:bg-gold hover:text-ink"
+                >
+                  Go to {id}
+                </a>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-bone/10 px-6 py-8 text-center text-sm text-bone-muted">
+        <p>
+          Animation Demo — {STUDIO_INFO.name} — Design System v1.0
+        </p>
+      </footer>
     </main>
-  )
-}
-
-function ColorSwatch({
-  name,
-  className,
-}: {
-  name: string
-  className: string
-}) {
-  return (
-    <div className={`rounded p-4 ${className}`}>
-      <p className="text-sm font-mono">{name}</p>
-    </div>
   )
 }

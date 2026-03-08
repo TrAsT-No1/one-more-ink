@@ -1,8 +1,8 @@
 // Shared animation variants, easing curves, and durations
 // Used by all animation primitives for visual consistency
 
-export const EASE_SMOOTH = [0.25, 0.1, 0.25, 1] as const
-export const EASE_OUT_EXPO = [0.19, 1, 0.22, 1] as const
+export const EASE_SMOOTH: [number, number, number, number] = [0.25, 0.1, 0.25, 1]
+export const EASE_OUT_EXPO: [number, number, number, number] = [0.19, 1, 0.22, 1]
 
 export const DURATION = {
   fast: 0.3,
@@ -23,7 +23,7 @@ export const fadeInUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: DURATION.normal, ease: [...EASE_SMOOTH] },
+    transition: { duration: DURATION.normal, ease: EASE_SMOOTH },
   },
 }
 
@@ -31,7 +31,7 @@ export const fadeIn = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: DURATION.normal, ease: [...EASE_SMOOTH] },
+    transition: { duration: DURATION.normal, ease: EASE_SMOOTH },
   },
 }
 
@@ -40,6 +40,6 @@ export const scaleIn = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: DURATION.normal, ease: [...EASE_SMOOTH] },
+    transition: { duration: DURATION.normal, ease: EASE_SMOOTH },
   },
 }
