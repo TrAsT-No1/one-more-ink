@@ -1,5 +1,7 @@
 import type { Metadata } from "next"
 import { Cormorant_Garamond, Inter } from "next/font/google"
+import { MotionProvider } from "@/components/providers/motion-provider"
+import { LenisProvider } from "@/components/providers/lenis-provider"
 import "./globals.css"
 
 const cormorant = Cormorant_Garamond({
@@ -38,7 +40,11 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${inter.variable} font-body antialiased`}
       >
-        {children}
+        <MotionProvider>
+          <LenisProvider>
+            {children}
+          </LenisProvider>
+        </MotionProvider>
       </body>
     </html>
   )
