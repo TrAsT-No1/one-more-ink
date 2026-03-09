@@ -1,12 +1,13 @@
 "use client"
 
-import { Suspense } from "react"
+import { Suspense, useState, useCallback } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { m } from "motion/react"
 import { FadeIn } from "@/components/animations/fade-in"
 import { StaggerContainer } from "@/components/animations/stagger-container"
+import { Lightbox } from "@/components/lightbox"
 import { fadeInUp } from "@/lib/animations"
 import { STUDIO_INFO, SOCIAL_LINKS } from "@/lib/constants"
 import { artists, tattooStyles, galleryItems } from "@/lib/data"
@@ -15,6 +16,7 @@ function PortfolioContent() {
   const searchParams = useSearchParams()
   const activeStyle = searchParams.get("style") || "all"
   const activeArtist = searchParams.get("artist") || "all"
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   const filtered = galleryItems.filter((item) => {
     const matchStyle = activeStyle === "all" || item.style.toLowerCase().replace(/\s+/g, "-") === activeStyle
@@ -34,6 +36,18 @@ function PortfolioContent() {
     const qs = params.toString()
     return `/portfolio${qs ? `?${qs}` : ""}`
   }
+
+  const handlePrev = useCallback(() => {
+    setLightboxIndex((i) => (i !== null && i > 0 ? i - 1 : i))
+  }, [])
+
+  const handleNext = useCallback(() => {
+    setLightboxIndex((i) => (i !== null && i < filtered.length - 1 ? i + 1 : i))
+  }, [filtered.length])
+
+  const handleClose = useCallback(() => {
+    setLightboxIndex(null)
+  }, [])
 
   return (
     <main>
@@ -161,11 +175,12 @@ function PortfolioContent() {
             </FadeIn>
           ) : (
             <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
-              {filtered.map((item) => (
+              {filtered.map((item, index) => (
                 <m.div
                   key={item.id}
                   variants={fadeInUp}
-                  className="group relative overflow-hidden aspect-square"
+                  className="group relative overflow-hidden aspect-square cursor-pointer"
+                  onClick={() => setLightboxIndex(index)}
                 >
                   <Image
                     src={item.image}
@@ -193,6 +208,15 @@ function PortfolioContent() {
           )}
         </div>
       </section>
+
+      {/* Lightbox */}
+      <Lightbox
+        items={filtered}
+        currentIndex={lightboxIndex}
+        onClose={handleClose}
+        onPrev={handlePrev}
+        onNext={handleNext}
+      />
 
       {/* CTA */}
       <section className="px-6 py-16 bg-ink text-paper">
