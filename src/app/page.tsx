@@ -455,9 +455,14 @@ export default function Home() {
                   <span className="inline-block bg-ink text-paper px-8 py-4 text-sm font-display font-bold uppercase tracking-widest opacity-60 cursor-default">
                     Coming Soon
                   </span>
-                  <span className="text-xs text-ink-faded self-center font-display uppercase tracking-wider">
-                    Iscriviti per la preview ↓
-                  </span>
+                  <a
+                    href={SOCIAL_LINKS.instagram.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-ink-faded self-center font-display uppercase tracking-wider hover:text-rust transition-colors"
+                  >
+                    Seguici su Instagram per gli aggiornamenti →
+                  </a>
                 </div>
               </FadeIn>
             </div>

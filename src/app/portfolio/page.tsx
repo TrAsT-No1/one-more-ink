@@ -8,7 +8,7 @@ import { m } from "motion/react"
 import { FadeIn } from "@/components/animations/fade-in"
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { fadeInUp } from "@/lib/animations"
-import { STUDIO_INFO } from "@/lib/constants"
+import { STUDIO_INFO, SOCIAL_LINKS } from "@/lib/constants"
 import { artists, tattooStyles, galleryItems } from "@/lib/data"
 
 function PortfolioContent() {
@@ -39,10 +39,10 @@ function PortfolioContent() {
     <main>
       {/* Nav */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-paper/90 backdrop-blur-sm border-b border-ink/5">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/logo.png" alt="One More Ink" width={72} height={72} />
-            <span className="font-display font-extrabold text-lg hidden sm:block">One More Ink</span>
+            <span className="font-display font-extrabold text-xl hidden sm:block">One More Ink</span>
           </Link>
           <div className="flex items-center gap-6">
             <Link href="/#artisti" className="text-xs font-display uppercase tracking-widest text-ink-muted hover:text-ink transition-colors hidden sm:block">
@@ -66,7 +66,7 @@ function PortfolioContent() {
 
       {/* Header */}
       <section className="pt-32 pb-8 px-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="mb-6">
               <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-1">I nostri lavori</p>
@@ -85,7 +85,7 @@ function PortfolioContent() {
 
       {/* Filters */}
       <section className="sticky top-[73px] z-40 bg-paper/95 backdrop-blur-sm border-b border-ink/8 px-6 py-4">
-        <div className="max-w-7xl mx-auto space-y-3">
+        <div className="max-w-6xl mx-auto space-y-3">
           {/* Style filters */}
           <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">
             <span className="text-[10px] font-display uppercase tracking-widest text-ink-faded mr-1 shrink-0">Stile</span>
@@ -146,7 +146,7 @@ function PortfolioContent() {
 
       {/* Gallery Grid */}
       <section className="px-6 py-10">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {filtered.length === 0 ? (
             <FadeIn>
               <div className="text-center py-20">
@@ -193,7 +193,7 @@ function PortfolioContent() {
 
       {/* CTA */}
       <section className="px-6 py-16 bg-ink text-paper">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <h2 className="font-display text-2xl font-extrabold mb-4 md:text-4xl">
             Ti piace quello che vedi?
           </h2>
@@ -210,15 +210,25 @@ function PortfolioContent() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-ink text-paper/40 border-t border-paper/5 px-6 py-8">
-        <div className="max-w-7xl mx-auto flex flex-col gap-4 sm:flex-row sm:justify-between sm:items-center">
-          <div className="flex items-center gap-3">
-            <Image src="/logo.png" alt="" width={56} height={56} />
-            <span className="font-display font-extrabold text-paper">{STUDIO_INFO.name}</span>
+      <footer className="bg-ink text-paper/40 border-t border-paper/5 px-6 py-10">
+        <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-end">
+          <div className="flex items-center gap-4">
+            <Image src="/logo.png" alt="" width={64} height={64} />
+            <div>
+              <p className="font-display text-lg font-extrabold text-paper">{STUDIO_INFO.name}</p>
+              <p className="text-xs mt-1">
+                {STUDIO_INFO.address}
+              </p>
+            </div>
           </div>
-          <Link href="/" className="text-xs font-display uppercase tracking-widest hover:text-rust-light transition-colors">
-            ← Torna al sito
-          </Link>
+          <div className="flex gap-6 text-xs font-display uppercase tracking-wider">
+            <a href={SOCIAL_LINKS.instagram.url} target="_blank" rel="noopener noreferrer" className="hover:text-rust-light transition-colors">
+              Instagram
+            </a>
+            <Link href="/" className="hover:text-rust-light transition-colors">
+              ← Home
+            </Link>
+          </div>
         </div>
       </footer>
     </main>

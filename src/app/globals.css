@@ -65,6 +65,15 @@ body {
   opacity: 0.4;
 }
 
+/* Hide scrollbar on filter rows */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
