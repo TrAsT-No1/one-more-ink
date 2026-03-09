@@ -53,8 +53,8 @@ export const artists: Artist[] = [
     bio: "Tatuatrice dal 2013, wakeboarder, snowboarder, spirito libero. Ha aperto One More Ink perché voleva uno studio dove l'arte viene prima del business e dove ogni cliente esce con qualcosa di unico addosso.",
     philosophy: "Un tatuaggio non è un disegno sulla pelle — è un pezzo della tua storia che porti ovunque.",
     image: "/artists/federica-morselli.webp",
-    imageWork: "/artists/federica-work.jpg",
-    imageCasual: "/artists/federica-casual.jpg",
+    imageWork: "/artists/federica-portrait.jpg",
+    imageCasual: "/artists/federica-work.jpg",
   },
   {
     id: "stefano",

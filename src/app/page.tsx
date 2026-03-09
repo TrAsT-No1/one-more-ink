@@ -55,19 +55,42 @@ export default function Home() {
 
       {/* Hero — dark, full impact */}
       <section className="relative min-h-screen bg-ink text-paper flex flex-col justify-between px-6 pt-28 pb-10 overflow-hidden">
-        {/* Background gallery collage — faded */}
-        <div className="absolute inset-0 grid grid-cols-3 gap-1 opacity-[0.07]">
-          {galleryItems.slice(0, 6).map((item) => (
-            <div key={item.id} className="relative overflow-hidden">
-              <Image
-                src={item.image}
-                alt=""
-                fill
-                className="object-cover"
-                sizes="33vw"
-              />
-            </div>
-          ))}
+        {/* Background artist portraits — faded */}
+        <div className="absolute inset-0 opacity-[0.08]">
+          {/* Gallery collage */}
+          <div className="absolute inset-0 grid grid-cols-3 gap-1">
+            {galleryItems.slice(0, 6).map((item) => (
+              <div key={item.id} className="relative overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt=""
+                  fill
+                  className="object-cover"
+                  sizes="33vw"
+                />
+              </div>
+            ))}
+          </div>
+          {/* Stefano — right side */}
+          <div className="absolute right-0 top-0 bottom-0 w-1/2 md:w-2/5">
+            <Image
+              src="/artists/stefano-mazzotta.jpg"
+              alt=""
+              fill
+              className="object-cover object-top"
+              sizes="50vw"
+            />
+          </div>
+          {/* Federica — left side */}
+          <div className="absolute left-0 top-0 bottom-0 w-1/2 md:w-2/5">
+            <Image
+              src="/artists/federica-portrait.jpg"
+              alt=""
+              fill
+              className="object-cover object-top"
+              sizes="50vw"
+            />
+          </div>
         </div>
 
         {/* Decorative line */}
@@ -188,12 +211,12 @@ export default function Home() {
                       className="object-cover grayscale transition-opacity duration-500 group-hover:opacity-0"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    {/* Casual photo — color, visible on hover */}
+                    {/* Casual photo — B&W, visible on hover */}
                     <Image
                       src={artist.imageCasual}
                       alt={`${artist.name}`}
                       fill
-                      className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      className="object-cover grayscale opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
@@ -285,12 +308,12 @@ export default function Home() {
           </SlideUp>
 
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
-            {galleryItems.slice(0, 8).map((item, i) => (
+            {galleryItems.slice(0, 7).map((item, i) => (
               <m.div
                 key={item.id}
                 variants={fadeInUp}
                 className={`group relative overflow-hidden ${
-                  i === 0 || i === 7 ? "row-span-2 aspect-[3/5]" : "aspect-square"
+                  i === 0 ? "row-span-2 aspect-[3/5]" : "aspect-square"
                 }`}
               >
                 <Image
