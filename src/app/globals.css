@@ -2,38 +2,67 @@
 @import "lenis/dist/lenis.css";
 
 @theme {
-  /* Backgrounds */
-  --color-ink: oklch(0.18 0.000 90);
-  --color-ink-deep: oklch(0.17 0.000 90);
-  --color-ink-surface: oklch(0.22 0.000 90);
+  /* Backgrounds — warm paper tones */
+  --color-paper: oklch(0.95 0.010 85);
+  --color-paper-warm: oklch(0.91 0.015 78);
+  --color-paper-deep: oklch(0.86 0.018 72);
 
-  /* Gold accents */
-  --color-gold: oklch(0.77 0.139 91);
-  --color-gold-muted: oklch(0.75 0.085 82);
-  --color-gold-light: oklch(0.80 0.106 85);
+  /* Text — rich warm black */
+  --color-ink: oklch(0.18 0.015 45);
+  --color-ink-muted: oklch(0.40 0.012 50);
+  --color-ink-faded: oklch(0.55 0.010 50);
 
-  /* Text */
-  --color-bone: oklch(0.96 0.012 80);
-  --color-bone-muted: oklch(0.91 0.023 85);
+  /* Accent — vivid red (matching One More Ink logo) */
+  --color-rust: oklch(0.55 0.220 25);
+  --color-rust-dark: oklch(0.45 0.200 25);
+  --color-rust-light: oklch(0.65 0.180 28);
 
   /* Typography */
-  --font-display: var(--font-display-face), serif;
+  --font-display: var(--font-display-face), sans-serif;
   --font-body: var(--font-body-face), sans-serif;
+  --font-hand: var(--font-hand-face), cursive;
 
-  /* Spacing */
-  --spacing-section: 6rem;
-  --spacing-section-mobile: 4rem;
+  /* Spacing rhythm */
+  --spacing-section: 7rem;
+  --spacing-section-mobile: 4.5rem;
 }
 
 body {
-  @apply bg-ink text-bone;
+  @apply bg-paper text-ink;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+::selection {
+  background-color: oklch(0.55 0.220 25 / 0.2);
+}
+
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-rust);
   outline-offset: 2px;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* Underscore notation style — Federica's IG signature */
+.underscore-title {
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+.underscore-title::before,
+.underscore-title::after {
+  content: "_";
+  font-style: normal;
+  opacity: 0.4;
 }
 
 @media (prefers-reduced-motion: reduce) {

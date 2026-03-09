@@ -1,13 +1,12 @@
 import type { Metadata } from "next"
-import { Cormorant_Garamond, Inter } from "next/font/google"
+import { Syne, Inter, Caveat } from "next/font/google"
 import { MotionProvider } from "@/components/providers/motion-provider"
 import { LenisProvider } from "@/components/providers/lenis-provider"
 import "./globals.css"
 
-const cormorant = Cormorant_Garamond({
+const syne = Syne({
   variable: "--font-display-face",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 })
 
@@ -17,14 +16,20 @@ const inter = Inter({
   display: "swap",
 })
 
+const caveat = Caveat({
+  variable: "--font-hand-face",
+  subsets: ["latin"],
+  display: "swap",
+})
+
 export const metadata: Metadata = {
-  title: "One More Ink | Tattoo Studio",
+  title: "One More Ink — Tattoo & Piercing Studio Modena",
   description:
-    "Studio di tatuaggi a Roma. Stili personalizzati, artisti professionisti, esperienza unica.",
+    "Studio di tatuaggi e piercing a Modena. Federica Morselli e Stefano Mazzotta: traditional, blackwork, fine line, ornamental, neo-traditional, realismo.",
   openGraph: {
-    title: "One More Ink | Tattoo Studio",
+    title: "One More Ink — Tattoo & Piercing Studio Modena",
     description:
-      "Studio di tatuaggi a Roma. Stili personalizzati, artisti professionisti, esperienza unica.",
+      "Studio di tatuaggi e piercing a Modena. Federica Morselli e Stefano Mazzotta: traditional, blackwork, fine line, ornamental, neo-traditional, realismo.",
     type: "website",
     locale: "it_IT",
   },
@@ -38,7 +43,7 @@ export default function RootLayout({
   return (
     <html lang="it">
       <body
-        className={`${cormorant.variable} ${inter.variable} font-body antialiased`}
+        className={`${syne.variable} ${inter.variable} ${caveat.variable} font-body antialiased`}
       >
         <MotionProvider>
           <LenisProvider>
