@@ -12,10 +12,10 @@
   --color-ink-muted: oklch(0.40 0.012 50);
   --color-ink-faded: oklch(0.55 0.010 50);
 
-  /* Accent — vivid red (matching One More Ink logo) */
-  --color-rust: oklch(0.55 0.220 25);
-  --color-rust-dark: oklch(0.45 0.200 25);
-  --color-rust-light: oklch(0.65 0.180 28);
+  /* Accent — logo red (#E00000) */
+  --color-rust: oklch(0.53 0.255 29);
+  --color-rust-dark: oklch(0.43 0.230 29);
+  --color-rust-light: oklch(0.63 0.200 30);
 
   /* Typography */
   --font-display: var(--font-display-face), sans-serif;
@@ -34,7 +34,7 @@ body {
 }
 
 ::selection {
-  background-color: oklch(0.55 0.220 25 / 0.2);
+  background-color: oklch(0.53 0.255 29 / 0.2);
 }
 
 :focus-visible {
