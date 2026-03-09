@@ -129,6 +129,65 @@ export const reviews: Review[] = [
   { name: "Marco T.", text: "Terzo tatuaggio qui. Ormai è casa. Federica ha un talento unico per il traditional.", stars: 5 },
 ]
 
+export interface MerchItem {
+  id: string
+  name: string
+  description: string
+  price: string
+  category: "apparel" | "accessories"
+  variants?: string[]
+  badge?: string
+}
+
+export const merchItems: MerchItem[] = [
+  {
+    id: "tee-logo",
+    name: "OMI Logo Tee",
+    description: "T-shirt unisex in cotone organico con logo One More Ink ricamato sul petto. Vestibilità oversized.",
+    price: "€35",
+    category: "apparel",
+    variants: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "tee-flash",
+    name: "Flash Sheet Tee",
+    description: "Design esclusivo di Federica stampato in serigrafia. Edizione limitata a 50 pezzi.",
+    price: "€40",
+    category: "apparel",
+    variants: ["S", "M", "L", "XL"],
+    badge: "Limited",
+  },
+  {
+    id: "hoodie-omi",
+    name: "OMI Hoodie",
+    description: "Felpa con cappuccio in french terry 350gsm. Logo grande sul retro, piccolo sul petto.",
+    price: "€65",
+    category: "apparel",
+    variants: ["S", "M", "L", "XL"],
+  },
+  {
+    id: "cap-classic",
+    name: "OMI Cap",
+    description: "Cappellino dad cap con logo ricamato. Chiusura regolabile in metallo.",
+    price: "€25",
+    category: "accessories",
+  },
+  {
+    id: "tote-bag",
+    name: "Tote Bag",
+    description: "Borsa in tela canvas pesante con stampa flash sheet originale. Perfetta per lo studio e per il giorno dopo.",
+    price: "€20",
+    category: "accessories",
+  },
+  {
+    id: "sticker-pack",
+    name: "Sticker Pack",
+    description: "Set di 6 sticker in vinile con flash disegnati dagli artisti dello studio. Resistenti all'acqua.",
+    price: "€8",
+    category: "accessories",
+  },
+]
+
 export const stats = {
   yearsFounded: 2013,
   tattoosCount: "3.000+",

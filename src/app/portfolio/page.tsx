@@ -54,6 +54,9 @@ function PortfolioContent() {
             <Link href="/#servizi" className="text-xs font-display uppercase tracking-widest text-ink-muted hover:text-ink transition-colors hidden sm:block">
               Servizi
             </Link>
+            <Link href="/shop" className="text-xs font-display uppercase tracking-widest text-ink-muted hover:text-ink transition-colors hidden sm:block">
+              Shop
+            </Link>
             <a
               href={STUDIO_INFO.whatsappUrl}
               className="text-xs font-display uppercase tracking-widest bg-rust text-paper px-4 py-2 hover:bg-rust-dark transition-colors"

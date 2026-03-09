@@ -41,6 +41,9 @@ export default function Home() {
           <a href="#servizi" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
             Servizi
           </a>
+          <Link href="/shop" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
+            Shop
+          </Link>
           <a
             href={STUDIO_INFO.whatsappUrl}
             className="text-xs font-display uppercase tracking-widest bg-rust text-paper px-4 py-2 hover:bg-rust-dark transition-colors"
@@ -452,17 +455,12 @@ export default function Home() {
               </SlideUp>
               <FadeIn delay={0.2}>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <span className="inline-block bg-ink text-paper px-8 py-4 text-sm font-display font-bold uppercase tracking-widest opacity-60 cursor-default">
-                    Coming Soon
-                  </span>
-                  <a
-                    href={SOCIAL_LINKS.instagram.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-ink-faded self-center font-display uppercase tracking-wider hover:text-rust transition-colors"
+                  <Link
+                    href="/shop"
+                    className="inline-block bg-ink text-paper px-8 py-4 text-sm font-display font-bold uppercase tracking-widest hover:bg-rust transition-colors text-center"
                   >
-                    Seguici su Instagram per gli aggiornamenti →
-                  </a>
+                    Scopri lo Shop →
+                  </Link>
                 </div>
               </FadeIn>
             </div>
