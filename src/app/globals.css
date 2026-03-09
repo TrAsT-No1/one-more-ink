@@ -12,10 +12,10 @@
   --color-ink-muted: oklch(0.40 0.012 50);
   --color-ink-faded: oklch(0.55 0.010 50);
 
-  /* Accent — logo red (#E00000) */
-  --color-rust: oklch(0.53 0.255 29);
-  --color-rust-dark: oklch(0.43 0.230 29);
-  --color-rust-light: oklch(0.63 0.200 30);
+  /* Accent — logo red */
+  --color-rust: #E00000;
+  --color-rust-dark: #B00000;
+  --color-rust-light: #FF3333;
 
   /* Typography */
   --font-display: var(--font-display-face), sans-serif;
@@ -34,7 +34,7 @@ body {
 }
 
 ::selection {
-  background-color: oklch(0.53 0.255 29 / 0.2);
+  background-color: rgb(224 0 0 / 0.2);
 }
 
 :focus-visible {
