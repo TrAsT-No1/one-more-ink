@@ -66,8 +66,8 @@ export const artists: Artist[] = [
     specialties: ["Blackwork", "Neo-Traditional", "Realismo"],
     bio: "Blackwork d'impatto, neo-traditional curato nel dettaglio, realismo che sembra uscire dalla pelle. Stefano ha un tratto riconoscibile — deciso, pulito, senza compromessi.",
     philosophy: "Il nero non è un limite, è un linguaggio. Ogni linea ha un peso, ogni ombra racconta qualcosa.",
-    image: "/artists/stefano-mazzotta.jpg",
-    imageWork: "/artists/stefano-mazzotta.jpg",
+    image: "/artists/stefano-work-bw.jpg",
+    imageWork: "/artists/stefano-work-bw.jpg",
     imageCasual: "/gallery/stefano-demon.webp",
   },
 ]
