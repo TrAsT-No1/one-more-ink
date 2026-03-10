@@ -49,7 +49,7 @@ export default function ShopPage() {
       </nav>
 
       {/* Header */}
-      <section className="pt-32 pb-8 px-6">
+      <section className="pt-40 pb-8 px-6">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="mb-6">

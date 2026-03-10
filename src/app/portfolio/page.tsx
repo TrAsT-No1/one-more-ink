@@ -80,7 +80,7 @@ function PortfolioContent() {
       </nav>
 
       {/* Header */}
-      <section className="pt-32 pb-8 px-6">
+      <section className="pt-40 pb-8 px-6">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="mb-6">
@@ -99,7 +99,7 @@ function PortfolioContent() {
       </section>
 
       {/* Filters */}
-      <section className="sticky top-[96px] z-40 bg-paper/95 backdrop-blur-sm border-b border-ink/8 px-6 py-4">
+      <section className="sticky top-[112px] z-40 bg-paper/95 backdrop-blur-sm border-b border-ink/8 px-6 py-4">
         <div className="max-w-6xl mx-auto space-y-3">
           {/* Style filters */}
           <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">

@@ -54,7 +54,7 @@ export default function Home() {
       </nav>
 
       {/* Hero — dark, full impact */}
-      <section className="relative min-h-screen bg-ink text-paper flex flex-col justify-between px-6 pt-28 pb-10 overflow-hidden">
+      <section className="relative min-h-screen bg-ink text-paper flex flex-col justify-between px-6 pt-36 pb-10 overflow-hidden">
         {/* Background — symmetric: Federica left, works center, Stefano right */}
         <div className="absolute inset-0 opacity-[0.12] hidden md:grid grid-cols-[1fr_0.6fr_1fr] gap-1">
           {/* Federica — left */}
