@@ -54,7 +54,7 @@ export const artists: Artist[] = [
     philosophy: "Un tatuaggio non è un disegno sulla pelle — è un pezzo della tua storia che porti ovunque.",
     image: "/artists/federica-morselli.webp",
     imageWork: "/artists/federica-profile.webp",
-    imageCasual: "/gallery/federica-skull-roses-sleeve.webp",
+    imageCasual: "/gallery/federica-mermaid-warrior.webp",
   },
   {
     id: "stefano",
@@ -68,7 +68,7 @@ export const artists: Artist[] = [
     philosophy: "Il nero non è un limite, è un linguaggio. Ogni linea ha un peso, ogni ombra racconta qualcosa.",
     image: "/artists/stefano-mazzotta.jpg",
     imageWork: "/artists/stefano-mazzotta.jpg",
-    imageCasual: "/gallery/stefano-skulls-roses-sleeve.webp",
+    imageCasual: "/gallery/stefano-demon.webp",
   },
 ]
 
