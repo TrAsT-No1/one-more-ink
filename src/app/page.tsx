@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <main>
       {/* Nav — sticky, minimal */}
-      <nav className="tattoo-pattern fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-ink/80 backdrop-blur-sm">
+      <nav className="tattoo-pattern fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 bg-ink/70 backdrop-blur-md">
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logo.png"
@@ -32,15 +32,15 @@ export default function Home() {
           <span className="font-display font-extrabold text-paper text-xl hidden sm:block">One More Ink</span>
         </Link>
         <div className="flex items-center gap-6">
-          <a href="#artisti" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
+          <Link href="/artisti" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
             Artisti
-          </a>
+          </Link>
           <Link href="/portfolio" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
             Portfolio
           </Link>
-          <a href="#servizi" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
+          <Link href="/servizi" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
             Servizi
-          </a>
+          </Link>
           <Link href="/shop" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
             Shop
           </Link>
