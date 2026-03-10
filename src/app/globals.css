@@ -74,7 +74,7 @@ body {
 
 /* Old school tattoo flash pattern for header */
 .tattoo-pattern {
-  position: relative;
+  /* position managed by Tailwind (fixed on nav) */
 }
 
 .tattoo-pattern::before {
