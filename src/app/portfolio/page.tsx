@@ -174,7 +174,7 @@ function PortfolioContent() {
               </div>
             </FadeIn>
           ) : (
-            <StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
+            <StaggerContainer key={`${activeStyle}-${activeArtist}`} className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-3">
               {filtered.map((item, index) => (
                 <m.div
                   key={item.id}
