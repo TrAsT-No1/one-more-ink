@@ -93,7 +93,7 @@ export default function Home() {
           {/* Stefano — right */}
           <div className="relative overflow-hidden">
             <Image
-              src="/artists/stefano-mazzotta.jpg"
+              src="/artists/stefano-work-bw.jpg"
               alt=""
               fill
               className="object-cover object-top"
