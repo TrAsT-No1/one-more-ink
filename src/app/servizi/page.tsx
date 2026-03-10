@@ -24,24 +24,24 @@ export default function ServiziPage() {
       <nav className="tattoo-pattern fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 bg-ink/70 backdrop-blur-md">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.png" alt="One More Ink" width={96} height={96} />
-          <span className="font-display font-extrabold text-paper text-xl hidden sm:block">One More Ink</span>
+          <span className="font-display font-extrabold text-paper text-2xl hidden sm:block">One More Ink</span>
         </Link>
         <div className="flex items-center gap-6">
-          <Link href="/artisti" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
+          <Link href="/artisti" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Artisti
           </Link>
-          <Link href="/portfolio" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
+          <Link href="/portfolio" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Portfolio
           </Link>
-          <Link href="/servizi" className="text-xs font-display uppercase tracking-widest text-paper">
+          <Link href="/servizi" className="text-sm font-display uppercase tracking-widest text-paper">
             Servizi
           </Link>
-          <Link href="/shop" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
+          <Link href="/shop" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Shop
           </Link>
           <a
             href={STUDIO_INFO.whatsappUrl}
-            className="text-xs font-display uppercase tracking-widest border border-paper/30 text-paper px-4 py-2 hover:bg-rust hover:border-rust transition-colors"
+            className="text-sm font-display uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
           >
             Prenota
           </a>
@@ -153,7 +153,7 @@ export default function ServiziPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 py-16 bg-ink text-paper">
+      <section className="tattoo-accent px-6 py-16 bg-ink text-paper">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="font-display text-2xl font-extrabold mb-4 md:text-4xl">
             Pronto per il prossimo tatuaggio?
@@ -171,7 +171,7 @@ export default function ServiziPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-ink text-paper/40 border-t border-paper/5 px-6 py-10">
+      <footer className="tattoo-accent bg-ink text-paper/40 border-t border-paper/5 px-6 py-10">
         <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-end">
           <div className="flex items-center gap-4">
             <Image src="/logo.png" alt="" width={64} height={64} />

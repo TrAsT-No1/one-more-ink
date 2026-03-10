@@ -29,24 +29,24 @@ export default function Home() {
             width={96}
             height={96}
           />
-          <span className="font-display font-extrabold text-paper text-xl hidden sm:block">One More Ink</span>
+          <span className="font-display font-extrabold text-paper text-2xl hidden sm:block">One More Ink</span>
         </Link>
         <div className="flex items-center gap-6">
-          <Link href="/artisti" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
+          <Link href="/artisti" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Artisti
           </Link>
-          <Link href="/portfolio" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
+          <Link href="/portfolio" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Portfolio
           </Link>
-          <Link href="/servizi" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
+          <Link href="/servizi" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Servizi
           </Link>
-          <Link href="/shop" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
+          <Link href="/shop" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Shop
           </Link>
           <a
             href={STUDIO_INFO.whatsappUrl}
-            className="text-xs font-display uppercase tracking-widest border border-paper/30 text-paper px-4 py-2 hover:bg-rust hover:border-rust transition-colors"
+            className="text-sm font-display uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
           >
             Prenota
           </a>
@@ -154,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* Stats bar — social proof */}
-      <section className="bg-ink text-paper border-t border-paper/5">
+      <section className="tattoo-accent bg-ink text-paper border-t border-paper/5">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4">
           {[
             { value: `Dal ${stats.yearsFounded}`, label: "Anno di fondazione" },
@@ -283,7 +283,7 @@ export default function Home() {
       </section>
 
       {/* Philosophy */}
-      <section className="bg-ink text-paper px-6 py-section-mobile md:py-section relative overflow-hidden">
+      <section className="tattoo-accent bg-ink text-paper px-6 py-section-mobile md:py-section relative overflow-hidden">
         <div className="absolute right-6 md:right-16 top-1/2 -translate-y-1/2 opacity-[0.04] pointer-events-none select-none">
           <Image src="/logo.png" alt="" width={400} height={400} className="w-[50vw] max-w-[400px] h-auto" />
         </div>
@@ -439,7 +439,7 @@ export default function Home() {
       </section>
 
       {/* Reviews */}
-      <section className="bg-ink text-paper px-6 py-section-mobile md:py-section">
+      <section className="tattoo-accent bg-ink text-paper px-6 py-section-mobile md:py-section">
         <div className="max-w-6xl mx-auto">
           <SlideUp>
             <p className="text-xs font-display uppercase tracking-[0.3em] text-rust-light mb-4">Dicono di noi</p>
@@ -666,7 +666,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-ink text-paper/40 border-t border-paper/5 px-6 py-10">
+      <footer className="tattoo-accent bg-ink text-paper/40 border-t border-paper/5 px-6 py-10">
         <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-end">
           <div className="flex items-center gap-4">
             <Image src="/logo.png" alt="" width={64} height={64} />
