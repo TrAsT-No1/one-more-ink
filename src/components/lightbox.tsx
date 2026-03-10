@@ -92,16 +92,16 @@ export function Lightbox({ items, currentIndex, onClose, onPrev, onNext }: Light
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="relative max-w-[90vw] max-h-[85vh] flex flex-col items-center"
+            className="relative flex flex-col items-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative w-full max-h-[75vh] aspect-square">
+            <div className="relative" style={{ width: "min(90vw, 600px)", height: "min(80vh, 900px)" }}>
               <Image
                 src={item.image}
                 alt={item.label}
                 fill
                 className="object-contain"
-                sizes="90vw"
+                sizes="(max-width: 768px) 90vw, 600px"
                 priority
               />
             </div>
