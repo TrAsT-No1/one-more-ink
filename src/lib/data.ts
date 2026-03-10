@@ -53,8 +53,8 @@ export const artists: Artist[] = [
     bio: "Tatuatrice dal 2013, wakeboarder, snowboarder, spirito libero. Ha aperto One More Ink perché voleva uno studio dove l'arte viene prima del business e dove ogni cliente esce con qualcosa di unico addosso.",
     philosophy: "Un tatuaggio non è un disegno sulla pelle — è un pezzo della tua storia che porti ovunque.",
     image: "/artists/federica-morselli.webp",
-    imageWork: "/artists/federica-portrait.jpg",
-    imageCasual: "/artists/federica-work.jpg",
+    imageWork: "/artists/federica-profile.webp",
+    imageCasual: "/gallery/federica-skull-roses-sleeve.webp",
   },
   {
     id: "stefano",
@@ -67,8 +67,8 @@ export const artists: Artist[] = [
     bio: "Blackwork d'impatto, neo-traditional curato nel dettaglio, realismo che sembra uscire dalla pelle. Stefano ha un tratto riconoscibile — deciso, pulito, senza compromessi.",
     philosophy: "Il nero non è un limite, è un linguaggio. Ogni linea ha un peso, ogni ombra racconta qualcosa.",
     image: "/artists/stefano-mazzotta.jpg",
-    imageWork: "/artists/stefano-work.jpg",
-    imageCasual: "/artists/stefano-mazzotta.jpg",
+    imageWork: "/artists/stefano-mazzotta.jpg",
+    imageCasual: "/gallery/stefano-skulls-roses-sleeve.webp",
   },
 ]
 
@@ -135,6 +135,11 @@ export const galleryItems: GalleryItem[] = [
   { id: "stefano-frankenstein-portrait", artist: "stefano", style: "Realismo", label: "Frankenstein", image: "/gallery/stefano-frankenstein-portrait.webp" },
   { id: "stefano-red-demon-horns", artist: "stefano", style: "Neo-Traditional", label: "Demone rosso", image: "/gallery/stefano-red-demon-horns.webp" },
   { id: "stefano-igor-portrait", artist: "stefano", style: "Realismo", label: "Igor", image: "/gallery/stefano-igor-portrait.webp" },
+  { id: "stefano-jellyfish-blackwork", artist: "stefano", style: "Blackwork", label: "Medusa blackwork", image: "/gallery/stefano-jellyfish-blackwork.webp" },
+  { id: "stefano-snake-fineline", artist: "stefano", style: "Fine Line", label: "Serpente fine line", image: "/gallery/stefano-snake-fineline.webp" },
+  { id: "stefano-peony-sleeve", artist: "stefano", style: "Blackwork", label: "Peonia sleeve", image: "/gallery/stefano-peony-sleeve.webp" },
+  { id: "stefano-sparrow-roses", artist: "stefano", style: "Fine Line", label: "Passero e rose", image: "/gallery/stefano-sparrow-roses.webp" },
+  { id: "stefano-eye-swirl", artist: "stefano", style: "Blackwork", label: "Occhio vortice", image: "/gallery/stefano-eye-swirl.webp" },
 ]
 
 export const reviews: Review[] = [

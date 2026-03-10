@@ -21,25 +21,25 @@ export default function ShopPage() {
   return (
     <main>
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-paper/90 backdrop-blur-sm border-b border-ink/5">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-ink/80 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
           <Link href="/" className="flex items-center gap-3">
             <Image src="/logo.png" alt="One More Ink" width={72} height={72} />
-            <span className="font-display font-extrabold text-xl hidden sm:block">One More Ink</span>
+            <span className="font-display font-extrabold text-paper text-xl hidden sm:block">One More Ink</span>
           </Link>
           <div className="flex items-center gap-6">
-            <Link href="/#artisti" className="text-xs font-display uppercase tracking-widest text-ink-muted hover:text-ink transition-colors hidden sm:block">
+            <Link href="/#artisti" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
               Artisti
             </Link>
-            <Link href="/portfolio" className="text-xs font-display uppercase tracking-widest text-ink-muted hover:text-ink transition-colors hidden sm:block">
+            <Link href="/portfolio" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
               Portfolio
             </Link>
-            <Link href="/shop" className="text-xs font-display uppercase tracking-widest text-rust">
+            <Link href="/shop" className="text-xs font-display uppercase tracking-widest text-paper">
               Shop
             </Link>
             <a
               href={STUDIO_INFO.whatsappUrl}
-              className="text-xs font-display uppercase tracking-widest bg-rust text-paper px-4 py-2 hover:bg-rust-dark transition-colors"
+              className="text-xs font-display uppercase tracking-widest border border-paper/30 text-paper px-4 py-2 hover:bg-rust hover:border-rust transition-colors"
             >
               Prenota
             </a>

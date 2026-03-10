@@ -46,7 +46,7 @@ export default function Home() {
           </Link>
           <a
             href={STUDIO_INFO.whatsappUrl}
-            className="text-xs font-display uppercase tracking-widest bg-rust text-paper px-4 py-2 hover:bg-rust-dark transition-colors"
+            className="text-xs font-display uppercase tracking-widest border border-paper/30 text-paper px-4 py-2 hover:bg-rust hover:border-rust transition-colors"
           >
             Prenota
           </a>
@@ -55,42 +55,61 @@ export default function Home() {
 
       {/* Hero — dark, full impact */}
       <section className="relative min-h-screen bg-ink text-paper flex flex-col justify-between px-6 pt-28 pb-10 overflow-hidden">
-        {/* Background artist portraits — faded */}
-        <div className="absolute inset-0 opacity-[0.08]">
-          {/* Gallery collage */}
-          <div className="absolute inset-0 grid grid-cols-3 gap-1">
-            {galleryItems.slice(0, 6).map((item) => (
-              <div key={item.id} className="relative overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="33vw"
-                />
-              </div>
-            ))}
+        {/* Background — symmetric: Federica left, works center, Stefano right */}
+        <div className="absolute inset-0 opacity-[0.12] hidden md:grid grid-cols-[1fr_0.6fr_1fr] gap-1">
+          {/* Federica — left */}
+          <div className="relative overflow-hidden">
+            <Image
+              src="/artists/federica-profile.webp"
+              alt=""
+              fill
+              className="object-cover object-top"
+              sizes="40vw"
+            />
           </div>
-          {/* Stefano — right side */}
-          <div className="absolute right-0 top-0 bottom-0 w-1/2 md:w-2/5">
+          {/* Center column — two works stacked */}
+          <div className="grid grid-rows-2 gap-1">
+            {/* Top: Federica's work */}
+            <div className="relative overflow-hidden">
+              <Image
+                src="/gallery/federica-mermaid-warrior.webp"
+                alt=""
+                fill
+                className="object-cover"
+                sizes="25vw"
+              />
+            </div>
+            {/* Bottom: Stefano's work */}
+            <div className="relative overflow-hidden">
+              <Image
+                src="/gallery/stefano-eye-swirl.webp"
+                alt=""
+                fill
+                className="object-cover"
+                sizes="25vw"
+              />
+            </div>
+          </div>
+          {/* Stefano — right */}
+          <div className="relative overflow-hidden">
             <Image
               src="/artists/stefano-mazzotta.jpg"
               alt=""
               fill
               className="object-cover object-top"
-              sizes="50vw"
+              sizes="40vw"
             />
           </div>
-          {/* Federica — left side */}
-          <div className="absolute left-0 top-0 bottom-0 w-1/2 md:w-2/5">
-            <Image
-              src="/artists/federica-portrait.jpg"
-              alt=""
-              fill
-              className="object-cover object-top"
-              sizes="50vw"
-            />
-          </div>
+        </div>
+        {/* Mobile fallback — simpler */}
+        <div className="absolute inset-0 opacity-[0.08] md:hidden">
+          <Image
+            src="/artists/federica-profile.webp"
+            alt=""
+            fill
+            className="object-cover object-top"
+            sizes="100vw"
+          />
         </div>
 
         {/* Decorative line */}
@@ -201,22 +220,22 @@ export default function Home() {
             {artists.map((artist, i) => (
               <FadeIn key={artist.id} delay={i * 0.2} direction="up">
                 <div className={`group ${i === 1 ? "md:mt-32" : ""}`}>
-                  {/* Artist photo — B&W at work → color casual on hover */}
+                  {/* Artist photo — profile → tattoo work on hover */}
                   <Link href={`/portfolio?artist=${artist.id}`} className="block aspect-[3/4] bg-ink mb-8 overflow-hidden relative cursor-pointer">
-                    {/* Work photo — B&W, visible by default */}
+                    {/* Profile photo — B&W, visible by default */}
                     <Image
                       src={artist.imageWork}
-                      alt={`${artist.name} al lavoro`}
+                      alt={`${artist.name}`}
                       fill
                       className="object-cover grayscale transition-opacity duration-500 group-hover:opacity-0"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                    {/* Casual photo — B&W, visible on hover */}
+                    {/* Tattoo work — visible on hover */}
                     <Image
                       src={artist.imageCasual}
-                      alt={`${artist.name}`}
+                      alt={`Lavoro di ${artist.name}`}
                       fill
-                      className="object-cover grayscale opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />

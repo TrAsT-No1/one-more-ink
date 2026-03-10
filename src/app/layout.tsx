@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   title: "One More Ink — Tattoo & Piercing Studio Modena",
   description:
     "Studio di tatuaggi e piercing a Modena. Federica Morselli e Stefano Mazzotta: traditional, blackwork, fine line, ornamental, neo-traditional, realismo.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/icon-192.png",
+  },
   openGraph: {
     title: "One More Ink — Tattoo & Piercing Studio Modena",
     description:
