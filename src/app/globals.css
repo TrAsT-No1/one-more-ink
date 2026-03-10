@@ -72,7 +72,7 @@ body {
   margin-left: 0.15em;
 }
 
-/* Old school tattoo pattern for header */
+/* Old school tattoo flash pattern for header */
 .tattoo-pattern {
   position: relative;
 }
@@ -81,9 +81,9 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("/tattoo-pattern.svg");
+  background-image: url("/tattoo-pattern.png");
   background-repeat: repeat;
-  background-size: 400px 200px;
+  background-size: 500px 390px;
   pointer-events: none;
   z-index: 0;
 }
