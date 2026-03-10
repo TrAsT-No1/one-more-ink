@@ -58,11 +58,18 @@ body {
   letter-spacing: -0.02em;
 }
 
-.underscore-title::before,
+.underscore-title::before {
+  content: "_";
+  font-style: normal;
+  opacity: 0.4;
+  margin-right: 0.15em;
+}
+
 .underscore-title::after {
   content: "_";
   font-style: normal;
   opacity: 0.4;
+  margin-left: 0.15em;
 }
 
 /* Hide scrollbar on filter rows */
