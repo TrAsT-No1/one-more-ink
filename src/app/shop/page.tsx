@@ -21,7 +21,7 @@ export default function ShopPage() {
   return (
     <main>
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-ink/80 backdrop-blur-sm">
+      <nav className="tattoo-pattern fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-ink/80 backdrop-blur-sm">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.png" alt="One More Ink" width={72} height={72} />
           <span className="font-display font-extrabold text-paper text-xl hidden sm:block">One More Ink</span>
@@ -32,6 +32,9 @@ export default function ShopPage() {
           </Link>
           <Link href="/portfolio" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
             Portfolio
+          </Link>
+          <Link href="/#servizi" className="text-xs font-display uppercase tracking-widest text-paper/60 hover:text-paper transition-colors hidden sm:block">
+            Servizi
           </Link>
           <Link href="/shop" className="text-xs font-display uppercase tracking-widest text-paper">
             Shop
