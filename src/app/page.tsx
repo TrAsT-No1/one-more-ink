@@ -21,13 +21,13 @@ export default function Home() {
   return (
     <main>
       {/* Nav — sticky, minimal */}
-      <nav className="tattoo-pattern fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-5 bg-ink/70 backdrop-blur-md">
+      <nav className="tattoo-pattern fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 bg-ink/70 backdrop-blur-md">
         <Link href="/" className="flex items-center gap-3">
           <Image
             src="/logo.png"
             alt="One More Ink"
-            width={72}
-            height={72}
+            width={96}
+            height={96}
           />
           <span className="font-display font-extrabold text-paper text-xl hidden sm:block">One More Ink</span>
         </Link>
