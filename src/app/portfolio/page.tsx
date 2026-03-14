@@ -58,21 +58,21 @@ function PortfolioContent() {
           <span className="font-display font-extrabold text-paper text-2xl hidden sm:block">One More Ink</span>
         </Link>
         <div className="flex items-center gap-6">
-          <Link href="/artisti" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/artisti" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Artisti
           </Link>
-          <Link href="/portfolio" className="text-sm font-display uppercase tracking-widest text-paper">
+          <Link href="/portfolio" className="text-base font-display font-bold uppercase tracking-widest text-rust-light">
             Portfolio
           </Link>
-          <Link href="/servizi" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/servizi" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Servizi
           </Link>
-          <Link href="/shop" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/shop" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Shop
           </Link>
           <a
             href={STUDIO_INFO.whatsappUrl}
-            className="text-sm font-display uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
+            className="text-base font-display font-bold uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
           >
             Prenota
           </a>
@@ -80,7 +80,7 @@ function PortfolioContent() {
       </nav>
 
       {/* Header */}
-      <section className="pt-40 pb-8 px-6">
+      <section className="pt-52 pb-8 px-6">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="mb-6">
@@ -99,7 +99,7 @@ function PortfolioContent() {
       </section>
 
       {/* Filters */}
-      <section className="sticky top-[112px] z-40 bg-paper/95 backdrop-blur-sm border-b border-ink/8 px-6 py-4">
+      <section className="sticky top-[148px] z-40 bg-paper/95 backdrop-blur-sm border-b border-ink/8 px-6 py-4">
         <div className="max-w-6xl mx-auto space-y-3">
           {/* Style filters */}
           <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-hide">

@@ -32,21 +32,21 @@ export default function Home() {
           <span className="font-display font-extrabold text-paper text-2xl hidden sm:block">One More Ink</span>
         </Link>
         <div className="flex items-center gap-6">
-          <Link href="/artisti" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/artisti" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Artisti
           </Link>
-          <Link href="/portfolio" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/portfolio" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Portfolio
           </Link>
-          <Link href="/servizi" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/servizi" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Servizi
           </Link>
-          <Link href="/shop" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/shop" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Shop
           </Link>
           <a
             href={STUDIO_INFO.whatsappUrl}
-            className="text-sm font-display uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
+            className="text-base font-display font-bold uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
           >
             Prenota
           </a>
@@ -54,7 +54,7 @@ export default function Home() {
       </nav>
 
       {/* Hero — dark, full impact */}
-      <section className="relative min-h-screen bg-ink text-paper flex flex-col justify-between px-6 pt-36 pb-10 overflow-hidden">
+      <section className="relative min-h-screen bg-ink text-paper flex flex-col justify-between px-6 pt-52 pb-10 overflow-hidden">
         {/* Background — symmetric: Federica left, works center, Stefano right */}
         <div className="absolute inset-0 opacity-[0.12] hidden md:grid grid-cols-[1fr_0.6fr_1fr] gap-1">
           {/* Federica — left */}

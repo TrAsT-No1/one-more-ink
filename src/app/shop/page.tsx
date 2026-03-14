@@ -27,21 +27,21 @@ export default function ShopPage() {
           <span className="font-display font-extrabold text-paper text-2xl hidden sm:block">One More Ink</span>
         </Link>
         <div className="flex items-center gap-6">
-          <Link href="/artisti" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/artisti" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Artisti
           </Link>
-          <Link href="/portfolio" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/portfolio" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Portfolio
           </Link>
-          <Link href="/servizi" className="text-sm font-display uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/servizi" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Servizi
           </Link>
-          <Link href="/shop" className="text-sm font-display uppercase tracking-widest text-paper">
+          <Link href="/shop" className="text-base font-display font-bold uppercase tracking-widest text-rust-light">
             Shop
           </Link>
           <a
             href={STUDIO_INFO.whatsappUrl}
-            className="text-sm font-display uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
+            className="text-base font-display font-bold uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
           >
             Prenota
           </a>
@@ -49,7 +49,7 @@ export default function ShopPage() {
       </nav>
 
       {/* Header */}
-      <section className="pt-40 pb-8 px-6">
+      <section className="pt-52 pb-8 px-6">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="mb-6">
