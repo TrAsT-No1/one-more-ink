@@ -284,8 +284,24 @@ export default function Home() {
 
       {/* Philosophy */}
       <section className="tattoo-accent bg-ink text-paper px-6 py-section-mobile md:py-section relative overflow-hidden">
-        <div className="absolute right-6 md:right-16 top-1/2 -translate-y-1/2 opacity-[0.04] pointer-events-none select-none">
-          <Image src="/logo.png" alt="" width={400} height={400} className="w-[50vw] max-w-[400px] h-auto" />
+        {/* Logo centered with tattoo pattern as fill */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
+          <div
+            className="w-[60vw] max-w-[500px] aspect-square opacity-[0.06]"
+            style={{
+              backgroundImage: "url('/tattoo-pattern.png')",
+              backgroundRepeat: "repeat",
+              backgroundSize: "300px 234px",
+              WebkitMaskImage: "url('/logo.png')",
+              WebkitMaskRepeat: "no-repeat",
+              WebkitMaskPosition: "center",
+              WebkitMaskSize: "contain",
+              maskImage: "url('/logo.png')",
+              maskRepeat: "no-repeat",
+              maskPosition: "center",
+              maskSize: "contain",
+            }}
+          />
         </div>
 
         <div className="max-w-5xl mx-auto relative">
