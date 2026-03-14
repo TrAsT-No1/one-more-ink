@@ -650,32 +650,45 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 py-section-mobile md:py-section bg-ink text-paper">
-        <div className="max-w-5xl mx-auto">
-          <SlideUp>
-            <p className="font-hand text-2xl text-rust-light mb-6 md:text-3xl">ancora uno?</p>
-            <h2 className="font-display text-3xl font-extrabold mb-8 md:text-5xl lg:text-6xl leading-tight">
-              Che sia il primo
-              <br />
-              o il prossimo,
-              <br />
-              <span className="text-rust-light">parte da qui.</span>
-            </h2>
-          </SlideUp>
-          <FadeIn delay={0.2}>
-            <div className="flex flex-col sm:flex-row gap-4 items-start">
-              <a
-                href={STUDIO_INFO.whatsappUrl}
-                className="inline-block bg-rust text-paper px-10 py-4 text-sm font-display font-bold uppercase tracking-widest transition-colors hover:bg-rust-dark"
-              >
-                Scrivici su WhatsApp
-              </a>
-              <a
-                href={`tel:${STUDIO_INFO.phone}`}
-                className="inline-block border border-paper/20 text-paper/60 px-10 py-4 text-sm font-display font-bold uppercase tracking-widest transition-colors hover:border-paper/40 hover:text-paper"
-              >
-                Chiamaci
-              </a>
+      <section className="px-6 py-section-mobile md:py-section bg-ink text-paper overflow-hidden">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_auto] gap-12 items-center">
+          <div>
+            <SlideUp>
+              <p className="font-hand text-2xl text-rust-light mb-6 md:text-3xl">ancora uno?</p>
+              <h2 className="font-display text-3xl font-extrabold mb-8 md:text-5xl lg:text-6xl leading-tight">
+                Che sia il primo
+                <br />
+                o il prossimo,
+                <br />
+                <span className="text-rust-light">parte da qui.</span>
+              </h2>
+            </SlideUp>
+            <FadeIn delay={0.2}>
+              <div className="flex flex-col sm:flex-row gap-4 items-start">
+                <a
+                  href={STUDIO_INFO.whatsappUrl}
+                  className="inline-block bg-rust text-paper px-10 py-4 text-sm font-display font-bold uppercase tracking-widest transition-colors hover:bg-rust-dark"
+                >
+                  Scrivici su WhatsApp
+                </a>
+                <a
+                  href={`tel:${STUDIO_INFO.phone}`}
+                  className="inline-block border border-paper/20 text-paper/60 px-10 py-4 text-sm font-display font-bold uppercase tracking-widest transition-colors hover:border-paper/40 hover:text-paper"
+                >
+                  Chiamaci
+                </a>
+              </div>
+            </FadeIn>
+          </div>
+          <FadeIn delay={0.4} direction="right">
+            <div className="hidden md:block">
+              <Image
+                src="/logo.png"
+                alt="One More Ink"
+                width={280}
+                height={280}
+                className="opacity-20"
+              />
             </div>
           </FadeIn>
         </div>
