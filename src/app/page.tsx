@@ -47,7 +47,7 @@ export default function Home() {
           </Link>
           <a
             href={STUDIO_INFO.whatsappUrl}
-            className="text-base font-display font-bold uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
+            className="btn-glow text-base font-display font-bold uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
           >
             Prenota
           </a>
