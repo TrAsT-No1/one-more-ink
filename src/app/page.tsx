@@ -27,7 +27,8 @@ export default function Home() {
             src="/logo.png"
             alt="One More Ink"
             width={96}
-            height={96}
+            height={133}
+            className="h-[96px] w-auto"
           />
           <span className="font-display font-extrabold text-paper text-2xl hidden sm:block">One More Ink</span>
         </Link>
@@ -286,7 +287,7 @@ export default function Home() {
       <section className="tattoo-accent bg-ink text-paper px-6 py-section-mobile md:py-section relative overflow-hidden">
         {/* Logo centered in background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none">
-          <Image src="/logo.png" alt="" width={500} height={500} className="w-[60vw] max-w-[500px] h-auto opacity-[0.06]" />
+          <Image src="/logo.png" alt="" width={500} height={692} className="w-[60vw] max-w-[500px] h-auto opacity-[0.06]" />
         </div>
 
         <div className="max-w-5xl mx-auto relative">
@@ -684,7 +685,7 @@ export default function Home() {
       <footer className="tattoo-accent bg-ink text-paper/40 border-t border-paper/5 px-6 py-10">
         <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-end">
           <div className="flex items-center gap-4">
-            <Image src="/logo.png" alt="" width={64} height={64} />
+            <Image src="/logo.png" alt="" width={64} height={89} className="h-[64px] w-auto" />
             <div>
               <p className="font-display text-lg font-extrabold text-paper">{STUDIO_INFO.name}</p>
               <p className="text-xs mt-1">
