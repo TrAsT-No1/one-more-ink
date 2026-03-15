@@ -49,22 +49,17 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${inter.variable} ${caveat.variable} font-body antialiased`}
       >
-        {/* SVG filters for logo outline — small (header/footer) and large (CTA/sections) */}
+        {/* SVG filter for logo outline — scales proportionally with any logo size */}
         <svg width="0" height="0" style={{ position: 'absolute' }}>
           <defs>
-            <filter id="logo-outline-sm">
-              <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="expanded" />
+            <filter id="logo-outline-filter" x="-10%" y="-10%" width="120%" height="120%" primitiveUnits="objectBoundingBox">
+              <feMorphology in="SourceAlpha" operator="dilate" radius="0.012 0.008" result="expanded" />
+              <feGaussianBlur in="expanded" stdDeviation="0.002 0.002" result="smoothed" />
+              <feComponentTransfer in="smoothed" result="sharpened">
+                <feFuncA type="table" tableValues="0 1 1 1 1" />
+              </feComponentTransfer>
               <feFlood floodColor="white" result="white" />
-              <feComposite in="white" in2="expanded" operator="in" result="outline" />
-              <feMerge>
-                <feMergeNode in="outline" />
-                <feMergeNode in="SourceGraphic" />
-              </feMerge>
-            </filter>
-            <filter id="logo-outline-lg">
-              <feMorphology in="SourceAlpha" operator="dilate" radius="5" result="expanded" />
-              <feFlood floodColor="white" result="white" />
-              <feComposite in="white" in2="expanded" operator="in" result="outline" />
+              <feComposite in="white" in2="sharpened" operator="in" result="outline" />
               <feMerge>
                 <feMergeNode in="outline" />
                 <feMergeNode in="SourceGraphic" />

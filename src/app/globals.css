@@ -138,12 +138,9 @@ body {
   box-shadow: 0 0 15px rgba(255, 51, 51, 0.4), 0 0 30px rgba(255, 51, 51, 0.2);
 }
 
-/* White outline on logo — two sizes for different contexts */
+/* White outline on logo — single scalable filter */
 .logo-outline {
-  filter: url(#logo-outline-sm);
-}
-.logo-outline-lg {
-  filter: url(#logo-outline-lg);
+  filter: url(#logo-outline-filter);
 }
 
 /* Hide scrollbar on filter rows */

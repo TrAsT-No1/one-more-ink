@@ -158,7 +158,7 @@ export default function ArtistiPage() {
       {/* Philosophy */}
       <section className="tattoo-accent bg-ink text-paper px-6 py-16 md:py-24 relative overflow-hidden">
         <div className="absolute right-6 md:right-16 top-1/2 -translate-y-1/2 opacity-[0.04] pointer-events-none select-none">
-          <Image src="/logo.png" alt="" width={400} height={554} className="w-[50vw] max-w-[400px] h-auto logo-outline-lg" />
+          <Image src="/logo.png" alt="" width={400} height={554} className="w-[50vw] max-w-[400px] h-auto logo-outline" />
         </div>
         <div className="max-w-5xl mx-auto relative">
           <FadeIn>
