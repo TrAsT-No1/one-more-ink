@@ -288,7 +288,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto relative">
           {/* Logo decorativo — centered right, mirroring CTA layout */}
           <div className="hidden md:block" style={{ position: 'absolute', right: '-2rem', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', userSelect: 'none' }}>
-            <Image src="/logo.png" alt="" width={220} height={305} style={{ opacity: 0.08 }} />
+            <Image src="/logo.png" alt="" width={220} height={305} className="logo-outline" style={{ opacity: 0.4 }} />
           </div>
 
           <FadeIn>
