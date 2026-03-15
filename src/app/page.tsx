@@ -637,7 +637,7 @@ export default function Home() {
 
       {/* CTA */}
       <section className="relative px-6 py-section-mobile md:py-section bg-ink text-paper">
-        <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen" style={{ backgroundImage: 'url(/tattoo-pattern.png)', backgroundRepeat: 'repeat', backgroundSize: '500px 390px', opacity: 0.5 }} />
+        <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen" style={{ backgroundImage: 'url(/tattoo-pattern.png)', backgroundRepeat: 'repeat', backgroundSize: '500px 390px', opacity: 0.6 }} />
         <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_auto] gap-8 items-center relative z-10">
           <div>
             <SlideUp>
