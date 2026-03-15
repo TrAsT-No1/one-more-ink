@@ -27,16 +27,16 @@ export default function ServiziPage() {
           <span className="font-display font-extrabold text-paper text-2xl hidden sm:block">One More Ink</span>
         </Link>
         <div className="flex items-center gap-6">
-          <Link href="/artisti" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/artisti" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Artisti
           </Link>
-          <Link href="/portfolio" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/portfolio" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Portfolio
           </Link>
           <Link href="/servizi" className="text-base font-display font-bold uppercase tracking-widest text-rust-light">
             Servizi
           </Link>
-          <Link href="/shop" className="text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
+          <Link href="/shop" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
             Shop
           </Link>
           <a

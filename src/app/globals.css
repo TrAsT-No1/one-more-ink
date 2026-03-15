@@ -117,6 +117,17 @@ body {
   z-index: 1;
 }
 
+/* Nav link glow on hover */
+.nav-glow {
+  transition: color 0.3s, text-shadow 0.3s;
+}
+.nav-glow:hover {
+  text-shadow: 0 0 12px var(--color-rust-light), 0 0 24px rgba(255, 51, 51, 0.3);
+}
+.nav-glow.active {
+  text-shadow: 0 0 12px var(--color-rust-light), 0 0 24px rgba(255, 51, 51, 0.3);
+}
+
 /* White outline on logo — multiple drop-shadows for uniform thickness */
 .logo-outline {
   filter:
