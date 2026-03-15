@@ -120,6 +120,7 @@ body {
 /* Nav link glow on hover */
 .nav-glow {
   transition: color 0.3s, text-shadow 0.3s;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2), 0 0 16px rgba(255, 255, 255, 0.1);
 }
 .nav-glow:hover {
   text-shadow: 0 0 12px var(--color-rust-light), 0 0 24px rgba(255, 51, 51, 0.3);
@@ -140,14 +141,14 @@ body {
 /* White outline on logo — sharp directional drop-shadows */
 .logo-outline {
   filter:
-    drop-shadow(1px 0 0 white)
-    drop-shadow(-1px 0 0 white)
-    drop-shadow(0 1px 0 white)
-    drop-shadow(0 -1px 0 white)
-    drop-shadow(1px 1px 0 white)
-    drop-shadow(-1px -1px 0 white)
-    drop-shadow(1px -1px 0 white)
-    drop-shadow(-1px 1px 0 white);
+    drop-shadow(2px 0 0 white)
+    drop-shadow(-2px 0 0 white)
+    drop-shadow(0 2px 0 white)
+    drop-shadow(0 -2px 0 white)
+    drop-shadow(2px 2px 0 white)
+    drop-shadow(-2px -2px 0 white)
+    drop-shadow(2px -2px 0 white)
+    drop-shadow(-2px 2px 0 white);
 }
 
 /* Hide scrollbar on filter rows */
