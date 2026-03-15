@@ -49,10 +49,19 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${inter.variable} ${caveat.variable} font-body antialiased`}
       >
-        {/* SVG filter for uniform logo outline — scales with any size */}
+        {/* SVG filters for logo outline — small (header/footer) and large (CTA/sections) */}
         <svg width="0" height="0" style={{ position: 'absolute' }}>
           <defs>
-            <filter id="logo-outline-filter">
+            <filter id="logo-outline-sm">
+              <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="expanded" />
+              <feFlood floodColor="white" result="white" />
+              <feComposite in="white" in2="expanded" operator="in" result="outline" />
+              <feMerge>
+                <feMergeNode in="outline" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+            <filter id="logo-outline-lg">
               <feMorphology in="SourceAlpha" operator="dilate" radius="5" result="expanded" />
               <feFlood floodColor="white" result="white" />
               <feComposite in="white" in2="expanded" operator="in" result="outline" />
