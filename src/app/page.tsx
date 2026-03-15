@@ -28,7 +28,7 @@ export default function Home() {
             alt="One More Ink"
             width={96}
             height={133}
-            className="h-[96px] w-auto logo-outline"
+            className="h-[96px] w-auto"
           />
           <span className="font-display font-extrabold text-paper text-2xl hidden sm:block">One More Ink</span>
         </Link>
@@ -288,7 +288,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto relative">
           {/* Logo decorativo — centered right, mirroring CTA layout */}
           <div className="hidden md:block" style={{ position: 'absolute', right: '-2rem', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', userSelect: 'none' }}>
-            <Image src="/logo.png" alt="" width={220} height={305} className="logo-outline" style={{ opacity: 0.4 }} />
+            <Image src="/logo.png" alt="" width={220} height={305} style={{ opacity: 0.4 }} />
           </div>
 
           <FadeIn>
@@ -674,7 +674,6 @@ export default function Home() {
                 alt="One More Ink"
                 width={280}
                 height={387}
-                className="logo-outline"
               />
             </div>
           </FadeIn>
@@ -685,7 +684,7 @@ export default function Home() {
       <footer className="tattoo-accent bg-ink text-paper/40 border-t border-paper/5 px-6 py-10">
         <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-end">
           <div className="flex items-center gap-4">
-            <Image src="/logo.png" alt="" width={64} height={89} className="h-[64px] w-auto logo-outline" />
+            <Image src="/logo.png" alt="" width={64} height={89} className="h-[64px] w-auto" />
             <div>
               <p className="font-display text-lg font-extrabold text-paper">{STUDIO_INFO.name}</p>
               <p className="text-xs mt-1">
