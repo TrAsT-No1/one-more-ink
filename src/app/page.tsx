@@ -667,13 +667,13 @@ export default function Home() {
             </FadeIn>
           </div>
           <FadeIn delay={0.4} direction="right">
-            <div className="hidden md:block max-h-[400px]">
+            <div className="hidden md:block">
               <Image
                 src="/logo.png"
                 alt="One More Ink"
-                width={693}
-                height={1020}
-                className="opacity-20 h-full max-h-[400px] w-auto object-contain"
+                width={280}
+                height={387}
+                className="opacity-10"
               />
             </div>
           </FadeIn>
