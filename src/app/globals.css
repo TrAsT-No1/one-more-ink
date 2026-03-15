@@ -106,7 +106,7 @@ body {
   background-image: url("/tattoo-pattern.png");
   background-repeat: repeat;
   background-size: 600px 468px;
-  opacity: 0.12;
+  opacity: 0.25;
   mix-blend-mode: screen;
   pointer-events: none;
   z-index: 0;
