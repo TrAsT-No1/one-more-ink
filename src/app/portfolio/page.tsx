@@ -54,7 +54,7 @@ function PortfolioContent() {
       {/* Nav */}
       <nav className="tattoo-pattern fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 bg-ink/70 backdrop-blur-md">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.png" alt="One More Ink" width={96} height={133} className="h-[96px] w-auto" />
+          <Image src="/logo.png" alt="One More Ink" width={96} height={133} className="h-[96px] w-auto logo-outline" />
           <span className="font-display font-extrabold text-paper text-2xl hidden sm:block">One More Ink</span>
         </Link>
         <div className="flex items-center gap-6">
@@ -238,7 +238,7 @@ function PortfolioContent() {
       <footer className="tattoo-accent bg-ink text-paper/40 border-t border-paper/5 px-6 py-10">
         <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-end">
           <div className="flex items-center gap-4">
-            <Image src="/logo.png" alt="" width={64} height={89} className="h-[64px] w-auto" />
+            <Image src="/logo.png" alt="" width={64} height={89} className="h-[64px] w-auto logo-outline" />
             <div>
               <p className="font-display text-lg font-extrabold text-paper">{STUDIO_INFO.name}</p>
               <p className="text-xs mt-1">

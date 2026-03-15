@@ -138,6 +138,11 @@ body {
   box-shadow: 0 0 15px rgba(255, 51, 51, 0.4), 0 0 30px rgba(255, 51, 51, 0.2);
 }
 
+/* White outline on logo — SVG feMorphology for smooth curves */
+.logo-outline {
+  filter: url(#logo-outline-filter);
+}
+
 /* Hide scrollbar on filter rows */
 .scrollbar-hide {
   -ms-overflow-style: none;

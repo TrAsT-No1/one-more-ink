@@ -49,6 +49,20 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${inter.variable} ${caveat.variable} font-body antialiased`}
       >
+        {/* SVG filter for logo outline — feMorphology dilate produces smooth mathematical curves */}
+        <svg width="0" height="0" style={{ position: 'absolute' }}>
+          <defs>
+            <filter id="logo-outline-filter" x="-10%" y="-10%" width="120%" height="120%" primitiveUnits="objectBoundingBox">
+              <feMorphology in="SourceAlpha" operator="dilate" radius="0.022 0.015" result="expanded" />
+              <feFlood floodColor="white" result="white" />
+              <feComposite in="white" in2="expanded" operator="in" result="outline" />
+              <feMerge>
+                <feMergeNode in="outline" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+        </svg>
         <MotionProvider>
           <LenisProvider>
             {children}
