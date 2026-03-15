@@ -666,7 +666,7 @@ export default function Home() {
             </FadeIn>
           </div>
           <FadeIn delay={0.4} direction="right">
-            <div className="hidden md:block">
+            <div className="hidden md:block -ml-[25%]">
               <Image
                 src="/logo.png"
                 alt="One More Ink"
