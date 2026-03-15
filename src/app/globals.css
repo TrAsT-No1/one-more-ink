@@ -138,17 +138,9 @@ body {
   box-shadow: 0 0 15px rgba(255, 51, 51, 0.4), 0 0 30px rgba(255, 51, 51, 0.2);
 }
 
-/* White outline on logo — sharp directional drop-shadows */
+/* White outline on logo — SVG filter for uniform, scalable outline */
 .logo-outline {
-  filter:
-    drop-shadow(3px 0 0 white)
-    drop-shadow(-3px 0 0 white)
-    drop-shadow(0 3px 0 white)
-    drop-shadow(0 -3px 0 white)
-    drop-shadow(3px 3px 0 white)
-    drop-shadow(-3px -3px 0 white)
-    drop-shadow(3px -3px 0 white)
-    drop-shadow(-3px 3px 0 white);
+  filter: url(#logo-outline-filter);
 }
 
 /* Hide scrollbar on filter rows */
