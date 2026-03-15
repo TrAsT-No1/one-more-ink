@@ -141,14 +141,14 @@ body {
 /* White outline on logo — sharp directional drop-shadows */
 .logo-outline {
   filter:
-    drop-shadow(2px 0 0 white)
-    drop-shadow(-2px 0 0 white)
-    drop-shadow(0 2px 0 white)
-    drop-shadow(0 -2px 0 white)
-    drop-shadow(2px 2px 0 white)
-    drop-shadow(-2px -2px 0 white)
-    drop-shadow(2px -2px 0 white)
-    drop-shadow(-2px 2px 0 white);
+    drop-shadow(3px 0 0 white)
+    drop-shadow(-3px 0 0 white)
+    drop-shadow(0 3px 0 white)
+    drop-shadow(0 -3px 0 white)
+    drop-shadow(3px 3px 0 white)
+    drop-shadow(-3px -3px 0 white)
+    drop-shadow(3px -3px 0 white)
+    drop-shadow(-3px 3px 0 white);
 }
 
 /* Hide scrollbar on filter rows */
