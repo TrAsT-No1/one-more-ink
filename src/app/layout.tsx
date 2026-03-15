@@ -53,7 +53,7 @@ export default function RootLayout({
         <svg width="0" height="0" style={{ position: 'absolute' }}>
           <defs>
             <filter id="logo-outline-filter">
-              <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="expanded" />
+              <feMorphology in="SourceAlpha" operator="dilate" radius="5" result="expanded" />
               <feFlood floodColor="white" result="white" />
               <feComposite in="white" in2="expanded" operator="in" result="outline" />
               <feMerge>
