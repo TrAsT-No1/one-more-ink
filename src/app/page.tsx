@@ -636,7 +636,7 @@ export default function Home() {
 
       {/* CTA */}
       <section className="relative px-6 py-section-mobile md:py-section bg-ink text-paper">
-        <div className="absolute inset-0 pointer-events-none z-0" style={{ backgroundImage: 'url(/tattoo-pattern.png)', backgroundRepeat: 'repeat', backgroundSize: '500px 390px', opacity: 0.06 }} />
+        <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen" style={{ backgroundImage: 'url(/tattoo-pattern.png)', backgroundRepeat: 'repeat', backgroundSize: '500px 390px', opacity: 0.12 }} />
         <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_auto] gap-8 items-center relative z-10">
           <div>
             <SlideUp>
@@ -667,13 +667,13 @@ export default function Home() {
             </FadeIn>
           </div>
           <FadeIn delay={0.4} direction="right">
-            <div className="hidden md:block">
+            <div className="hidden md:block max-h-[400px]">
               <Image
                 src="/logo.png"
                 alt="One More Ink"
-                width={250}
-                height={368}
-                className="opacity-20"
+                width={693}
+                height={1020}
+                className="opacity-20 h-full max-h-[400px] w-auto object-contain"
               />
             </div>
           </FadeIn>
