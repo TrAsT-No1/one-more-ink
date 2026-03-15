@@ -673,7 +673,7 @@ export default function Home() {
                 alt="One More Ink"
                 width={280}
                 height={387}
-                className="opacity-10"
+                className=""
               />
             </div>
           </FadeIn>
