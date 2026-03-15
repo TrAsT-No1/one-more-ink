@@ -117,6 +117,14 @@ body {
   z-index: 1;
 }
 
+/* White outline on logo — multiple drop-shadows for uniform thickness */
+.logo-outline {
+  filter:
+    drop-shadow(0 0 3px white)
+    drop-shadow(0 0 3px white)
+    drop-shadow(0 0 1px white);
+}
+
 /* Hide scrollbar on filter rows */
 .scrollbar-hide {
   -ms-overflow-style: none;
