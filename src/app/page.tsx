@@ -285,12 +285,12 @@ export default function Home() {
 
       {/* Philosophy */}
       <section className="tattoo-accent bg-ink text-paper px-6 py-section-mobile md:py-section relative overflow-hidden">
-        {/* Logo in background — right side */}
-        <div className="absolute right-6 md:right-16 top-1/2 -translate-y-1/2 pointer-events-none select-none">
-          <Image src="/logo.png" alt="" width={250} height={356} className="opacity-[0.04] logo-outline" />
-        </div>
-
         <div className="max-w-5xl mx-auto relative">
+          {/* Logo decorativo — bottom right */}
+          <div style={{ position: 'absolute', right: 0, bottom: 0, pointerEvents: 'none', userSelect: 'none' }}>
+            <Image src="/logo.png" alt="" width={150} height={214} className="logo-outline" style={{ opacity: 0.15 }} />
+          </div>
+
           <FadeIn>
             <p className="font-hand text-xl text-rust-light mb-10 md:text-2xl">
               _la filosofia_
