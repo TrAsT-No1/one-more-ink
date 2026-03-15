@@ -666,13 +666,13 @@ export default function Home() {
             </FadeIn>
           </div>
           <FadeIn delay={0.4} direction="right">
-            <div className="hidden md:block relative">
-              <div className="absolute inset-[-20px] rounded-full opacity-[0.08]" style={{ backgroundImage: 'url(/tattoo-pattern.png)', backgroundRepeat: 'repeat', backgroundSize: '400px 312px' }} />
+            <div className="hidden md:block relative p-10">
+              <div className="absolute inset-0 opacity-[0.15]" style={{ backgroundImage: 'url(/tattoo-pattern.png)', backgroundRepeat: 'repeat', backgroundSize: '400px 312px' }} />
               <Image
                 src="/logo.png"
                 alt="One More Ink"
-                width={300}
-                height={300}
+                width={320}
+                height={320}
                 className="opacity-20 relative z-10"
               />
             </div>
