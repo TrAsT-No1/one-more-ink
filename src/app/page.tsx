@@ -286,9 +286,9 @@ export default function Home() {
       {/* Philosophy */}
       <section className="tattoo-accent bg-ink text-paper px-6 py-section-mobile md:py-section relative overflow-hidden">
         <div className="max-w-5xl mx-auto relative">
-          {/* Logo decorativo — bottom right */}
-          <div style={{ position: 'absolute', right: 0, bottom: 0, pointerEvents: 'none', userSelect: 'none' }}>
-            <Image src="/logo.png" alt="" width={150} height={214} className="logo-outline" style={{ opacity: 0.15 }} />
+          {/* Logo decorativo — centered right, mirroring CTA layout */}
+          <div className="hidden md:block" style={{ position: 'absolute', right: '-2rem', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', userSelect: 'none' }}>
+            <Image src="/logo.png" alt="" width={220} height={305} style={{ opacity: 0.08 }} />
           </div>
 
           <FadeIn>
