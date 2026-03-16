@@ -48,15 +48,23 @@ export default function ServiziPage() {
           <div className="grid gap-8 sm:grid-cols-2">
             {services.map((service, i) => (
               <FadeIn key={service.id} delay={i * 0.1} direction="up">
-                <div className="bg-paper border border-ink/8 p-8 md:p-10 group hover:border-rust/20 transition-colors">
+                <a
+                  href={`${STUDIO_INFO.whatsappUrl}?text=${encodeURIComponent(service.whatsappMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-paper border border-ink/8 p-8 md:p-10 group hover:border-rust/20 transition-colors cursor-pointer"
+                >
                   <div className="flex items-start gap-4 mb-5">
                     <span className="text-2xl text-rust">{STAR_ICONS[service.icon] || "✦"}</span>
-                    <h2 className="font-display text-xl font-extrabold">{service.name}</h2>
+                    <h2 className="font-display text-xl font-extrabold group-hover:text-rust transition-colors">{service.name}</h2>
                   </div>
-                  <p className="text-sm text-ink-muted leading-relaxed">
+                  <p className="text-sm text-ink-muted leading-relaxed mb-4">
                     {service.description}
                   </p>
-                </div>
+                  <span className="text-xs font-display uppercase tracking-[0.2em] text-rust opacity-0 group-hover:opacity-100 transition-opacity">
+                    Scrivici su WhatsApp →
+                  </span>
+                </a>
               </FadeIn>
             ))}
           </div>
