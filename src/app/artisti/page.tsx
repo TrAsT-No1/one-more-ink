@@ -2,11 +2,13 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { Nav } from "@/components/nav"
 import { FadeIn } from "@/components/animations/fade-in"
 import { SlideUp } from "@/components/animations/slide-up"
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { fadeInUp } from "@/lib/animations"
 import { m } from "motion/react"
+import { Footer } from "@/components/footer"
 import { STUDIO_INFO, SOCIAL_LINKS } from "@/lib/constants"
 import { artists, galleryItems } from "@/lib/data"
 
@@ -14,41 +16,16 @@ export default function ArtistiPage() {
   return (
     <main>
       {/* Nav */}
-      <nav className="tattoo-pattern fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 bg-ink/70 backdrop-blur-md">
-        <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.png" alt="One More Ink" width={96} height={133} className="h-[96px] w-auto logo-outline" />
-          <span className="font-display font-extrabold text-paper text-2xl hidden sm:block">One More Ink</span>
-        </Link>
-        <div className="flex items-center gap-6">
-          <Link href="/artisti" className="text-base font-display font-bold uppercase tracking-widest text-rust-light">
-            Artisti
-          </Link>
-          <Link href="/portfolio" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
-            Portfolio
-          </Link>
-          <Link href="/servizi" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
-            Servizi
-          </Link>
-          <Link href="/shop" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
-            Shop
-          </Link>
-          <a
-            href={STUDIO_INFO.whatsappUrl}
-            className="text-base font-display font-bold uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
-          >
-            Prenota
-          </a>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Header */}
       <section className="pt-52 pb-8 px-6">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="mb-6">
-              <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-1">Chi siamo</p>
+              <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-1">Chi Siamo</p>
               <h1 className="font-display text-4xl font-extrabold md:text-6xl">
-                <span className="underscore-title">gli artisti</span>
+                <span className="underscore-title">Gli Artisti</span>
               </h1>
             </div>
             <p className="text-ink-muted max-w-lg leading-relaxed">
@@ -122,7 +99,7 @@ export default function ArtistiPage() {
 
                   {/* Recent works preview */}
                   <div>
-                    <p className="text-[10px] font-display uppercase tracking-widest text-ink-faded mb-3">Ultimi lavori</p>
+                    <p className="text-[10px] font-display uppercase tracking-widest text-ink-faded mb-3">Ultimi Lavori</p>
                     <StaggerContainer className="grid grid-cols-3 gap-2">
                       {galleryItems
                         .filter(item => item.artist === artist.id)
@@ -155,36 +132,34 @@ export default function ArtistiPage() {
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="tattoo-accent bg-ink text-paper px-6 py-16 md:py-24 relative overflow-hidden">
-        <div className="absolute right-6 md:right-16 top-1/2 -translate-y-1/2 opacity-[0.04] pointer-events-none select-none">
-          <Image src="/logo.png" alt="" width={400} height={554} className="w-[50vw] max-w-[400px] h-auto logo-outline" />
-        </div>
+      {/* Gli artisti */}
+      <section className="tattoo-accent bg-ink text-paper px-6 py-section-mobile md:py-section relative overflow-hidden">
         <div className="max-w-5xl mx-auto relative">
+          {/* Logo decorativo */}
+          <div className="hidden md:block" style={{ position: 'absolute', right: '-2rem', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', userSelect: 'none' }}>
+            <Image src="/logo.png" alt="" width={220} height={305} className="" style={{ opacity: 0.4 }} />
+          </div>
           <FadeIn>
-            <p className="font-hand text-xl text-rust-light mb-10 md:text-2xl">_la filosofia_</p>
+            <p className="font-hand text-xl text-rust-light mb-10 md:text-2xl">_Gli Artisti_</p>
           </FadeIn>
           <SlideUp>
             <h2 className="font-display text-3xl font-extrabold leading-tight md:text-6xl lg:text-7xl">
-              Non facciamo tatuaggi.
+              Due mani diverse.
               <br />
-              <span className="text-rust-light">Costruiamo storie</span>
-              <br />
-              sulla pelle.
+              <span className="text-rust-light">Una visione comune.</span>
             </h2>
           </SlideUp>
           <FadeIn delay={0.3}>
             <p className="mt-12 text-paper/50 max-w-lg leading-relaxed text-lg">
-              One More Ink non è solo uno studio — è il posto dove la tua idea diventa arte permanente.
-              Ogni progetto parte da una conversazione. Ogni segno ha un significato.
-              E quando esci, sai già che tornerai per il prossimo.
+              Federica e Stefano portano stili e percorsi diversi, ma condividono la stessa ossessione per il dettaglio.
+              Ogni pezzo nasce da ore di studio, reference e confronto — perché il tuo tatuaggio merita lo stesso rigore di un&apos;opera d&apos;arte.
             </p>
           </FadeIn>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="px-6 py-16 bg-paper-warm">
+      <section className="px-6 py-16">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="font-display text-2xl font-extrabold mb-4 md:text-4xl">
             Vuoi conoscerci di persona?
@@ -194,6 +169,8 @@ export default function ArtistiPage() {
           </p>
           <a
             href={STUDIO_INFO.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-rust text-paper px-10 py-4 text-sm font-display font-bold uppercase tracking-widest hover:bg-rust-dark transition-colors"
           >
             Scrivici su WhatsApp
@@ -202,28 +179,7 @@ export default function ArtistiPage() {
       </section>
 
       {/* Footer */}
-      <footer className="tattoo-accent bg-ink text-paper/40 border-t border-paper/5 px-6 py-10">
-        <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-end">
-          <div className="flex items-center gap-4">
-            <Image src="/logo.png" alt="" width={64} height={89} className="h-[64px] w-auto logo-outline" />
-            <div>
-              <p className="font-display text-lg font-extrabold text-paper">{STUDIO_INFO.name}</p>
-              <p className="text-xs mt-1">{STUDIO_INFO.address}</p>
-            </div>
-          </div>
-          <div className="flex gap-6 text-xs font-display uppercase tracking-wider">
-            <a href={SOCIAL_LINKS.instagram.url} target="_blank" rel="noopener noreferrer" className="hover:text-rust-light transition-colors">
-              Instagram
-            </a>
-            <Link href="/portfolio" className="hover:text-rust-light transition-colors">
-              Portfolio
-            </Link>
-            <Link href="/" className="hover:text-rust-light transition-colors">
-              ← Home
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }

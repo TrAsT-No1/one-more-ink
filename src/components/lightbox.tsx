@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useEffect } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { AnimatePresence, m } from "motion/react"
 import { artists } from "@/lib/data"
@@ -16,6 +16,15 @@ interface LightboxProps {
 
 export function Lightbox({ items, currentIndex, onClose, onPrev, onNext }: LightboxProps) {
   const item = currentIndex !== null ? items[currentIndex] : null
+  const imageContainerRef = useRef<HTMLDivElement>(null)
+  const [isZoomed, setIsZoomed] = useState(false)
+  const [transformOrigin, setTransformOrigin] = useState("center center")
+
+  // Reset zoom when changing image
+  useEffect(() => {
+    setIsZoomed(false)
+    setTransformOrigin("center center")
+  }, [currentIndex])
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
@@ -35,6 +44,30 @@ export function Lightbox({ items, currentIndex, onClose, onPrev, onNext }: Light
       window.removeEventListener("keydown", handleKeyDown)
     }
   }, [currentIndex, handleKeyDown])
+
+  const handleImageClick = (e: React.MouseEvent) => {
+    e.stopPropagation()
+    if (!isZoomed) {
+      // Zoom in at click position
+      const rect = imageContainerRef.current?.getBoundingClientRect()
+      if (rect) {
+        const x = ((e.clientX - rect.left) / rect.width) * 100
+        const y = ((e.clientY - rect.top) / rect.height) * 100
+        setTransformOrigin(`${x}% ${y}%`)
+      }
+      setIsZoomed(true)
+    } else {
+      setIsZoomed(false)
+    }
+  }
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isZoomed || !imageContainerRef.current) return
+    const rect = imageContainerRef.current.getBoundingClientRect()
+    const x = ((e.clientX - rect.left) / rect.width) * 100
+    const y = ((e.clientY - rect.top) / rect.height) * 100
+    setTransformOrigin(`${x}% ${y}%`)
+  }
 
   return (
     <AnimatePresence>
@@ -95,17 +128,38 @@ export function Lightbox({ items, currentIndex, onClose, onPrev, onNext }: Light
             className="relative flex flex-col items-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="relative" style={{ width: "min(90vw, 600px)", height: "min(80vh, 900px)" }}>
+            <div
+              ref={imageContainerRef}
+              className="relative overflow-hidden"
+              style={{
+                width: "min(90vw, 600px)",
+                height: "min(80vh, 900px)",
+                cursor: isZoomed ? "zoom-out" : "zoom-in",
+              }}
+              onClick={handleImageClick}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={() => { if (isZoomed) setIsZoomed(false) }}
+            >
               <Image
                 src={item.image}
                 alt={item.label}
                 fill
-                className="object-contain"
+                className="object-contain transition-transform duration-200 ease-out"
+                style={{
+                  transform: isZoomed ? "scale(2.5)" : "scale(1)",
+                  transformOrigin,
+                }}
                 sizes="(max-width: 768px) 90vw, 600px"
                 priority
               />
             </div>
-            <div className="mt-3 text-center">
+            {/* Zoom hint */}
+            {!isZoomed && (
+              <p className="text-paper/30 text-[10px] font-display uppercase tracking-widest mt-2">
+                Clicca per ingrandire
+              </p>
+            )}
+            <div className="mt-2 text-center">
               <p className="text-paper font-display font-bold text-sm">{item.label}</p>
               <div className="flex items-center justify-center gap-2 mt-1">
                 <span className="text-paper/40 text-xs font-display uppercase tracking-wider">{item.style}</span>

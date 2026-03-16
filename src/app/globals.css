@@ -31,6 +31,9 @@ body {
   @apply bg-paper text-ink;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("/tattoo-pattern.png");
+  background-repeat: repeat;
+  background-size: 500px 390px;
 }
 
 ::selection {
@@ -72,9 +75,9 @@ body {
   margin-left: 0.15em;
 }
 
-/* Old school tattoo flash pattern for header */
+/* Nav pattern — uses fixed attachment to align with body pattern */
 .tattoo-pattern {
-  /* position managed by Tailwind (fixed on nav) */
+  /* position inherited from element (fixed on nav) */
 }
 
 .tattoo-pattern::before {
@@ -84,6 +87,7 @@ body {
   background-image: url("/tattoo-pattern.png");
   background-repeat: repeat;
   background-size: 500px 390px;
+  background-attachment: fixed;
   pointer-events: none;
   z-index: 0;
 }
@@ -93,7 +97,7 @@ body {
   z-index: 1;
 }
 
-/* Subtle tattoo pattern accent for section backgrounds */
+/* Dark sections — opaque bg hides body pattern, own pattern in screen blend */
 .tattoo-accent {
   position: relative;
   overflow: hidden;
@@ -105,7 +109,8 @@ body {
   inset: 0;
   background-image: url("/tattoo-pattern.png");
   background-repeat: repeat;
-  background-size: 600px 468px;
+  background-size: 500px 390px;
+  background-attachment: fixed;
   opacity: 0.6;
   mix-blend-mode: screen;
   pointer-events: none;
@@ -113,6 +118,31 @@ body {
 }
 
 .tattoo-accent > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Beige sections — stronger pattern via multiply, aligned with body */
+.tattoo-accent-light {
+  position: relative;
+  overflow: hidden;
+}
+
+.tattoo-accent-light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/tattoo-pattern.png");
+  background-repeat: repeat;
+  background-size: 500px 390px;
+  background-attachment: fixed;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tattoo-accent-light > * {
   position: relative;
   z-index: 1;
 }
@@ -138,10 +168,7 @@ body {
   box-shadow: 0 0 15px rgba(255, 51, 51, 0.4), 0 0 30px rgba(255, 51, 51, 0.2);
 }
 
-/* White outline on logo — SVG feMorphology for smooth curves */
-.logo-outline {
-  filter: url(#logo-outline-filter);
-}
+/* outline is baked into logo.png — no CSS needed */
 
 /* Hide scrollbar on filter rows */
 .scrollbar-hide {

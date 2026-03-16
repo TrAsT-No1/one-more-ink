@@ -3,10 +3,12 @@
 import Image from "next/image"
 import Link from "next/link"
 import { m } from "motion/react"
+import { Nav } from "@/components/nav"
 import { FadeIn } from "@/components/animations/fade-in"
 import { SlideUp } from "@/components/animations/slide-up"
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { fadeInUp } from "@/lib/animations"
+import { Footer } from "@/components/footer"
 import { STUDIO_INFO, BUSINESS_HOURS, SOCIAL_LINKS } from "@/lib/constants"
 import { artists, tattooStyles, services, galleryItems, reviews, stats } from "@/lib/data"
 
@@ -21,43 +23,12 @@ export default function Home() {
   return (
     <main>
       {/* Nav — sticky, minimal */}
-      <nav className="tattoo-pattern fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 bg-ink/70 backdrop-blur-md">
-        <Link href="/" className="flex items-center gap-3">
-          <Image
-            src="/logo.png"
-            alt="One More Ink"
-            width={96}
-            height={133}
-            className="h-[96px] w-auto logo-outline"
-          />
-          <span className="font-display font-extrabold text-paper text-2xl hidden sm:block">One More Ink</span>
-        </Link>
-        <div className="flex items-center gap-6">
-          <Link href="/artisti" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
-            Artisti
-          </Link>
-          <Link href="/portfolio" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
-            Portfolio
-          </Link>
-          <Link href="/servizi" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
-            Servizi
-          </Link>
-          <Link href="/shop" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
-            Shop
-          </Link>
-          <a
-            href={STUDIO_INFO.whatsappUrl}
-            className="btn-glow text-base font-display font-bold uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
-          >
-            Prenota
-          </a>
-        </div>
-      </nav>
+      <Nav isHome />
 
       {/* Hero — dark, full impact */}
       <section className="relative min-h-screen bg-ink text-paper flex flex-col justify-between px-6 pt-52 pb-10 overflow-hidden">
         {/* Background — symmetric: Federica left, works center, Stefano right */}
-        <div className="absolute inset-0 opacity-[0.12] hidden md:grid grid-cols-[1fr_0.6fr_1fr] gap-1">
+        <div className="absolute inset-0 opacity-[0.12] hidden md:grid grid-cols-[1fr_0.6fr_1fr] gap-0">
           {/* Federica — left */}
           <div className="relative overflow-hidden">
             <Image
@@ -118,11 +89,11 @@ export default function Home() {
 
         {/* Top info */}
         <FadeIn delay={0.3} direction="none">
-          <div className="flex justify-between items-start max-w-6xl mx-auto w-full relative">
-            <p className="text-xs font-display uppercase tracking-[0.3em] text-paper/40">
+          <div className="flex justify-between items-baseline max-w-6xl mx-auto w-full relative">
+            <p className="text-sm font-display font-bold uppercase tracking-[0.3em] text-paper/60" style={{ textShadow: '0 0 12px rgba(255,255,255,0.3)' }}>
               Tattoo & Piercing Studio
             </p>
-            <p className="font-hand text-lg text-rust-light">
+            <p className="font-hand text-lg text-rust-light" style={{ textShadow: '0 0 12px rgba(255,51,51,0.4)' }}>
               Modena, dal 2013
             </p>
           </div>
@@ -131,9 +102,9 @@ export default function Home() {
         {/* Name — massive */}
         <div className="max-w-6xl mx-auto w-full flex-1 flex flex-col justify-center -mt-8 relative">
           <SlideUp>
-            <h1 className="font-display font-extrabold leading-[0.82] tracking-tighter">
+            <h1 className="font-display font-extrabold leading-[0.82] tracking-tighter text-left">
               <span className="block text-[15vw] md:text-[12vw]">One</span>
-              <span className="block text-[15vw] md:text-[12vw] text-rust-light ml-[10vw]">More</span>
+              <span className="block text-[15vw] md:text-[12vw] text-rust-light ml-[5vw]">More</span>
               <span className="block text-[15vw] md:text-[12vw]">Ink</span>
             </h1>
           </SlideUp>
@@ -142,9 +113,9 @@ export default function Home() {
         {/* Bottom tagline + scroll */}
         <FadeIn delay={0.6} direction="up" distance={15}>
           <div className="flex justify-between items-end max-w-6xl mx-auto w-full relative">
-            <p className="max-w-xs text-sm text-paper/50 leading-relaxed">
+            <p className="max-w-xs text-base font-bold text-paper/70 leading-relaxed" style={{ textShadow: '0 0 10px rgba(255,255,255,0.2)' }}>
               Lo studio dove la nonna viene per il primo tatuaggio
-              e tu torni per <span className="font-hand text-base text-rust-light">ancora uno</span>.
+              e tu torni per <span className="font-hand text-lg text-rust-light">ancora uno</span>.
             </p>
             <div className="flex flex-col items-center gap-2">
               <span className="text-[10px] font-display uppercase tracking-[0.4em] text-paper/30">Scroll</span>
@@ -207,9 +178,9 @@ export default function Home() {
       <section id="artisti" className="px-6 py-section-mobile md:py-section">
         <div className="max-w-6xl mx-auto">
           <SlideUp>
-            <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-4">Chi siamo</p>
+            <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-4">Chi Siamo</p>
             <h2 className="font-display text-4xl font-extrabold mb-3 md:text-6xl">
-              <span className="underscore-title">gli artisti</span>
+              <span className="underscore-title">Gli Artisti</span>
             </h2>
             <p className="text-ink-muted max-w-md mb-20 leading-relaxed">
               Due mani diverse, una visione comune: ogni tatuaggio
@@ -241,7 +212,7 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-paper">
-                      <a href={artist.instagramUrl} target="_blank" rel="noopener noreferrer" className="font-hand text-2xl text-rust-light hover:text-rust transition-colors mb-2 inline-block">{artist.instagram}</a>
+                      <span className="font-hand text-2xl text-rust-light mb-2 inline-block">{artist.instagram}</span>
                       <p className="text-xs font-display uppercase tracking-[0.2em] text-paper/50">
                         {artist.specialties.join(" · ")}
                       </p>
@@ -288,12 +259,12 @@ export default function Home() {
         <div className="max-w-5xl mx-auto relative">
           {/* Logo decorativo — centered right, mirroring CTA layout */}
           <div className="hidden md:block" style={{ position: 'absolute', right: '-2rem', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', userSelect: 'none' }}>
-            <Image src="/logo.png" alt="" width={220} height={305} className="logo-outline" style={{ opacity: 0.4 }} />
+            <Image src="/logo.png" alt="" width={220} height={305} className="" style={{ opacity: 0.4 }} />
           </div>
 
           <FadeIn>
             <p className="font-hand text-xl text-rust-light mb-10 md:text-2xl">
-              _la filosofia_
+              _La Filosofia_
             </p>
           </FadeIn>
           <SlideUp>
@@ -319,9 +290,9 @@ export default function Home() {
       <section id="portfolio" className="px-6 py-section-mobile md:py-section">
         <div className="max-w-6xl mx-auto">
           <SlideUp>
-            <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-4">I lavori</p>
+            <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-4">I Lavori</p>
             <h2 className="font-display text-4xl font-extrabold mb-3 md:text-6xl">
-              <span className="underscore-title">portfolio</span>
+              <span className="underscore-title">Portfolio</span>
             </h2>
             <p className="text-ink-muted max-w-md mb-16 leading-relaxed">
               Ogni pezzo racconta una storia diversa. Scorri per trovare il tuo stile.
@@ -370,12 +341,12 @@ export default function Home() {
       </section>
 
       {/* Styles */}
-      <section className="bg-paper-warm px-6 py-section-mobile md:py-section">
+      <section className="px-6 py-section-mobile md:py-section">
         <div className="max-w-6xl mx-auto">
           <SlideUp>
-            <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-4">Gli stili</p>
+            <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-4">Gli Stili</p>
             <h2 className="font-display text-4xl font-extrabold mb-3 md:text-6xl">
-              <span className="underscore-title">trova il tuo</span>
+              <span className="underscore-title">Trova il Tuo</span>
             </h2>
             <p className="text-ink-muted max-w-md mb-16 leading-relaxed">
               Dal traditional al realismo — ogni stile ha la sua anima.
@@ -413,9 +384,9 @@ export default function Home() {
       <section id="servizi" className="px-6 py-section-mobile md:py-section">
         <div className="max-w-6xl mx-auto">
           <SlideUp>
-            <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-4">Cosa offriamo</p>
+            <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-4">Cosa Offriamo</p>
             <h2 className="font-display text-4xl font-extrabold mb-3 md:text-6xl">
-              <span className="underscore-title">servizi</span>
+              <span className="underscore-title">Servizi</span>
             </h2>
             <p className="text-ink-muted max-w-md mb-16 leading-relaxed">
               Dal primo incontro al risultato finale — ti seguiamo in ogni passaggio.
@@ -425,7 +396,7 @@ export default function Home() {
           <div className="grid gap-8 sm:grid-cols-2">
             {services.map((service, i) => (
               <FadeIn key={service.id} delay={i * 0.1} direction="up">
-                <div className="border border-ink/8 p-8 md:p-10 group hover:border-rust/20 transition-colors">
+                <div className="bg-paper border border-ink/8 p-8 md:p-10 group hover:border-rust/20 transition-colors">
                   <div className="flex items-start gap-4 mb-5">
                     <span className="text-2xl text-rust">{STAR_ICONS[service.icon] || "✦"}</span>
                     <h3 className="font-display text-xl font-extrabold">{service.name}</h3>
@@ -444,9 +415,9 @@ export default function Home() {
       <section className="tattoo-accent bg-ink text-paper px-6 py-section-mobile md:py-section">
         <div className="max-w-6xl mx-auto">
           <SlideUp>
-            <p className="text-xs font-display uppercase tracking-[0.3em] text-rust-light mb-4">Dicono di noi</p>
+            <p className="text-xs font-display uppercase tracking-[0.3em] text-rust-light mb-4">Dicono di Noi</p>
             <h2 className="font-display text-4xl font-extrabold mb-3 md:text-6xl text-paper">
-              <span className="underscore-title">recensioni</span>
+              <span className="underscore-title">Recensioni</span>
             </h2>
             <p className="text-paper/40 max-w-md mb-16 leading-relaxed">
               {stats.googleRating} stelle su Google — {stats.googleReviews} recensioni reali.
@@ -478,18 +449,14 @@ export default function Home() {
       </section>
 
       {/* Shop / Merch teaser */}
-      <section className="px-6 py-section-mobile md:py-section bg-paper-warm relative overflow-hidden">
-        <div className="absolute -left-20 top-1/2 -translate-y-1/2 font-display text-[25vw] font-extrabold text-ink/[0.02] leading-none select-none rotate-90">
-          MERCH
-        </div>
-
+      <section className="px-6 py-section-mobile md:py-section relative overflow-hidden">
         <div className="max-w-6xl mx-auto relative">
           <div className="grid gap-12 md:grid-cols-2 md:items-center">
             <div>
               <SlideUp>
                 <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-4">Prossimamente</p>
                 <h2 className="font-display text-4xl font-extrabold mb-6 md:text-5xl">
-                  <span className="underscore-title">OMI merch</span>
+                  <span className="underscore-title">OMI Merch</span>
                 </h2>
                 <p className="text-ink-muted leading-relaxed mb-8">
                   Porta lo studio addosso — anche quando non sei sulla poltrona.
@@ -534,10 +501,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid gap-16 md:grid-cols-2">
             <FadeIn direction="up">
-              <div>
+              <div className="bg-paper p-6 md:p-8">
                 <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-4">Info</p>
                 <h2 className="font-display text-3xl font-extrabold mb-2 md:text-4xl">
-                  <span className="underscore-title">dove siamo</span>
+                  <span className="underscore-title">Dove Siamo</span>
                 </h2>
                 <p className="text-ink-muted leading-relaxed mb-8 mt-4">
                   {STUDIO_INFO.address}
@@ -545,6 +512,8 @@ export default function Home() {
                 <div className="flex flex-col gap-4 mb-10">
                   <a
                     href={STUDIO_INFO.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 bg-rust text-paper px-8 py-4 text-sm font-display font-bold uppercase tracking-widest transition-all hover:bg-rust-dark w-fit"
                   >
                     Scrivici su WhatsApp
@@ -574,10 +543,10 @@ export default function Home() {
             </FadeIn>
 
             <FadeIn direction="up" delay={0.15}>
-              <div>
+              <div className="bg-paper p-6 md:p-8">
                 <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-4">Orari</p>
                 <h2 className="font-display text-3xl font-extrabold mb-2 md:text-4xl">
-                  <span className="underscore-title">quando</span>
+                  <span className="underscore-title">Quando</span>
                 </h2>
                 <div className="space-y-0 mt-4">
                   {BUSINESS_HOURS.map((item) => (
@@ -636,8 +605,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative px-6 py-section-mobile md:py-section bg-ink text-paper">
-        <div className="absolute inset-0 pointer-events-none z-0 mix-blend-screen" style={{ backgroundImage: 'url(/tattoo-pattern.png)', backgroundRepeat: 'repeat', backgroundSize: '500px 390px', opacity: 0.6 }} />
+      <section className="tattoo-accent relative px-6 py-section-mobile md:py-section bg-ink text-paper">
         <div className="max-w-6xl mx-auto grid md:grid-cols-[1fr_auto] gap-8 items-center relative z-10">
           <div>
             <SlideUp>
@@ -654,6 +622,8 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 items-start">
                 <a
                   href={STUDIO_INFO.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block bg-rust text-paper px-10 py-4 text-sm font-display font-bold uppercase tracking-widest transition-colors hover:bg-rust-dark"
                 >
                   Scrivici su WhatsApp
@@ -674,7 +644,7 @@ export default function Home() {
                 alt="One More Ink"
                 width={280}
                 height={387}
-                className="logo-outline"
+                className=""
               />
             </div>
           </FadeIn>
@@ -682,30 +652,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="tattoo-accent bg-ink text-paper/40 border-t border-paper/5 px-6 py-10">
-        <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-end">
-          <div className="flex items-center gap-4">
-            <Image src="/logo.png" alt="" width={64} height={89} className="h-[64px] w-auto logo-outline" />
-            <div>
-              <p className="font-display text-lg font-extrabold text-paper">{STUDIO_INFO.name}</p>
-              <p className="text-xs mt-1">
-                {STUDIO_INFO.address}
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-6 text-xs font-display uppercase tracking-wider">
-            <a href={SOCIAL_LINKS.instagram.url} target="_blank" rel="noopener noreferrer" className="hover:text-rust-light transition-colors">
-              Instagram
-            </a>
-            <a href={SOCIAL_LINKS.facebook.url} target="_blank" rel="noopener noreferrer" className="hover:text-rust-light transition-colors">
-              Facebook
-            </a>
-            <a href={`tel:${STUDIO_INFO.phone}`} className="hover:text-rust-light transition-colors">
-              {STUDIO_INFO.phone}
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }

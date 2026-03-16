@@ -2,10 +2,12 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { Nav } from "@/components/nav"
 import { m } from "motion/react"
 import { FadeIn } from "@/components/animations/fade-in"
 import { StaggerContainer } from "@/components/animations/stagger-container"
 import { fadeInUp } from "@/lib/animations"
+import { Footer } from "@/components/footer"
 import { STUDIO_INFO, SOCIAL_LINKS } from "@/lib/constants"
 import { merchItems } from "@/lib/data"
 
@@ -21,32 +23,7 @@ export default function ShopPage() {
   return (
     <main>
       {/* Nav */}
-      <nav className="tattoo-pattern fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 bg-ink/70 backdrop-blur-md">
-        <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.png" alt="One More Ink" width={96} height={133} className="h-[96px] w-auto logo-outline" />
-          <span className="font-display font-extrabold text-paper text-2xl hidden sm:block">One More Ink</span>
-        </Link>
-        <div className="flex items-center gap-6">
-          <Link href="/artisti" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
-            Artisti
-          </Link>
-          <Link href="/portfolio" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
-            Portfolio
-          </Link>
-          <Link href="/servizi" className="nav-glow text-base font-display font-bold uppercase tracking-widest text-paper/70 hover:text-rust-light transition-colors hidden sm:block">
-            Servizi
-          </Link>
-          <Link href="/shop" className="text-base font-display font-bold uppercase tracking-widest text-rust-light">
-            Shop
-          </Link>
-          <a
-            href={STUDIO_INFO.whatsappUrl}
-            className="text-base font-display font-bold uppercase tracking-widest border border-paper/30 text-paper px-5 py-2.5 hover:bg-rust hover:border-rust transition-colors"
-          >
-            Prenota
-          </a>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Header */}
       <section className="pt-52 pb-8 px-6">
@@ -55,7 +32,7 @@ export default function ShopPage() {
             <div className="mb-6">
               <p className="text-xs font-display uppercase tracking-[0.3em] text-rust mb-1">Merch & Accessori</p>
               <h1 className="font-display text-4xl font-extrabold md:text-6xl">
-                <span className="underscore-title">OMI shop</span>
+                <span className="underscore-title">OMI Shop</span>
               </h1>
             </div>
             <p className="text-ink-muted max-w-lg leading-relaxed">
@@ -103,7 +80,7 @@ export default function ShopPage() {
               <m.div
                 key={item.id}
                 variants={fadeInUp}
-                className="group"
+                className="group bg-paper p-4"
               >
                 {/* Product image placeholder */}
                 <div className="aspect-square bg-ink mb-4 relative overflow-hidden flex items-center justify-center">
@@ -148,7 +125,7 @@ export default function ShopPage() {
       </section>
 
       {/* Accessories */}
-      <section className="px-6 py-10 bg-paper-warm">
+      <section className="px-6 py-10">
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <h2 className="font-display text-xs uppercase tracking-[0.3em] text-ink-faded mb-8">Accessori</h2>
@@ -158,7 +135,7 @@ export default function ShopPage() {
               <m.div
                 key={item.id}
                 variants={fadeInUp}
-                className="group"
+                className="group bg-paper p-4"
               >
                 <div className="aspect-square bg-ink mb-4 relative overflow-hidden flex items-center justify-center">
                   <div className="text-center">
@@ -184,7 +161,7 @@ export default function ShopPage() {
       </section>
 
       {/* CTA */}
-      <section className="px-6 py-16 bg-ink text-paper">
+      <section className="tattoo-accent px-6 py-16 bg-ink text-paper">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="font-display text-2xl font-extrabold mb-4 md:text-4xl">
             Vuoi essere il primo a sapere?
@@ -204,30 +181,7 @@ export default function ShopPage() {
       </section>
 
       {/* Footer */}
-      <footer className="tattoo-accent bg-ink text-paper/40 border-t border-paper/5 px-6 py-10">
-        <div className="max-w-6xl mx-auto flex flex-col gap-6 sm:flex-row sm:justify-between sm:items-end">
-          <div className="flex items-center gap-4">
-            <Image src="/logo.png" alt="" width={64} height={89} className="h-[64px] w-auto logo-outline" />
-            <div>
-              <p className="font-display text-lg font-extrabold text-paper">{STUDIO_INFO.name}</p>
-              <p className="text-xs mt-1">
-                {STUDIO_INFO.address}
-              </p>
-            </div>
-          </div>
-          <div className="flex gap-6 text-xs font-display uppercase tracking-wider">
-            <a href={SOCIAL_LINKS.instagram.url} target="_blank" rel="noopener noreferrer" className="hover:text-rust-light transition-colors">
-              Instagram
-            </a>
-            <Link href="/portfolio" className="hover:text-rust-light transition-colors">
-              Portfolio
-            </Link>
-            <Link href="/" className="hover:text-rust-light transition-colors">
-              ← Home
-            </Link>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </main>
   )
 }
