@@ -4,7 +4,7 @@ export const STUDIO_INFO = {
   city: "Modena",
   address: "Via Nobili 20/22, 41126 Modena",
   phone: "+39 327 0991523",
-  whatsappUrl: "https://wa.me/393270991523",
+  whatsappUrl: "https://api.whatsapp.com/send?phone=393270991523",
   googleMapsUrl: "https://maps.google.com/?q=One+More+Ink+Modena",
 } as const
 

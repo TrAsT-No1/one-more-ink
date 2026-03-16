@@ -49,7 +49,7 @@ export default function ServiziPage() {
             {services.map((service, i) => (
               <FadeIn key={service.id} delay={i * 0.1} direction="up">
                 <a
-                  href={`${STUDIO_INFO.whatsappUrl}?text=${encodeURIComponent(service.whatsappMessage)}`}
+                  href={`${STUDIO_INFO.whatsappUrl}&text=${encodeURIComponent(service.whatsappMessage)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block bg-paper border border-ink/8 p-8 md:p-10 group hover:border-rust/20 transition-colors cursor-pointer"
